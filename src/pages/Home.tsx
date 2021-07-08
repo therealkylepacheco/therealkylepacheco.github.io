@@ -1,6 +1,7 @@
 import { makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import logo from '../logo.svg';
+import { PageTitle } from '../components/PageTitle';
 
 const useStyles = makeStyles({
     logo: {
@@ -15,10 +16,8 @@ export const Home = () => {
 
     return (
         <>
+        <PageTitle text="Kyle Pacheco"/>
         <img src={logo} className={classes.logo} alt="logo" />
-            <Typography variant="h1">
-                Kyle Pacheco
-            </Typography>
             </>
     )
 }

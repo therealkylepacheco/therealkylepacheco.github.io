@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     backgroundColor: colors.background,
   },
   content: {
-    paddingTop: navbarHeight,
+    padding: navbarHeight,
   },
 })
 
