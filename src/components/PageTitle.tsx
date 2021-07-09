@@ -6,7 +6,7 @@ import { colors } from '../theme';
 const useStyles = makeStyles({
   title: {
       color: colors.primary,
-      marginTop: 15,
+      marginTop: 15
   },
 });
 
