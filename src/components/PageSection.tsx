@@ -9,7 +9,9 @@ const useStyles = makeStyles({
     borderRadius: 15,
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: colors.tertiary,
+    alignItems: 'center',
+    flexDirection: 'column',
+    //backgroundColor: colors.tertiary,
   },
   title: {
       color: colors.primary,
