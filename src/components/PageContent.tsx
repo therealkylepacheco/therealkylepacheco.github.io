@@ -23,19 +23,27 @@ export type PageContentProps = {
     body: string;
     img?: string;
     alt?: string;
+    imgPosition?: 'left' | 'right';
+};
+
+const defaultProps: Partial<PageContentProps> = {
+    imgPosition: 'right',
 };
 
 export const PageContent = (props: PageContentProps) => {
-    const { title, body, img, alt } = { ...props };
+    const { title, body, img, alt, imgPosition } = { ...defaultProps, ...props };
     const classes = useStyles();
+
+
     
     return (
         <Box className={classes.content}>
+            {(img && imgPosition === 'left') && <img src={img} alt={alt} className={classes.image}/>}
             <Box>
                 <Typography className={classes.title} variant='h5'>{title}</Typography>
                 <Typography variant="body1">{body}</Typography>
             </Box>
-            {img && <img src={img} alt={alt} className={classes.image}/>}
+            {(img && imgPosition === 'right') && <img src={img} alt={alt} className={classes.image}/>}
         </Box>
     )
 }
