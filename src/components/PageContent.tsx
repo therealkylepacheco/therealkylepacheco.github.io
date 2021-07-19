@@ -4,17 +4,25 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { colors } from '../theme';
 
+const TEXT_WIDTH = 450;
+const IMAGE_WIDTH = 350;
+
 const useStyles = makeStyles({
   title: {
       color: colors.primary,
+      maxWidth: TEXT_WIDTH,
   },
   content: {
       display: 'flex',
       alignItems: 'center',
-      //flexDirection: 'column',
+      justifyContent: 'flex-start',
+      width: '100%',
+  },
+  body: {
+      maxWidth: TEXT_WIDTH,
   },
   image: {
-      maxWidth: 350,
+      maxWidth: IMAGE_WIDTH,
   },
 });
 
@@ -39,10 +47,10 @@ export const PageContent = (props: PageContentProps) => {
     return (
         <Box className={classes.content}>
             {(img && imgPosition === 'left') && <img src={img} alt={alt} className={classes.image}/>}
-            <Box>
-                <Typography className={classes.title} variant='h5'>{title}</Typography>
-                <Typography variant="body1">{body}</Typography>
-            </Box>
+                <Box>
+                    <Typography className={classes.title} variant='h5'>{title}</Typography>
+                    <Typography className={classes.body} variant="body1">{body}</Typography>
+                </Box>
             {(img && imgPosition === 'right') && <img src={img} alt={alt} className={classes.image}/>}
         </Box>
     )
