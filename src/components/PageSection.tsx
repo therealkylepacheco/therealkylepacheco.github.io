@@ -9,7 +9,8 @@ const useStyles = makeStyles({
     borderRadius: 15,
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: colors.tertiary,
+    alignItems: 'center',
+    flexDirection: 'column',
   },
   title: {
       color: colors.primary,
@@ -26,11 +27,11 @@ export const PageSection: React.FC<PageSectionProps> = (props) => {
     const classes = useStyles();
     
     return (
-        <>
+            <>
                 <Typography className={classes.title} variant='h4'>{title}</Typography>
                 <Box className={classes.pageSection}>
                     {children}
                 </Box>
-        </>
-    )
+            </>
+)
 }
