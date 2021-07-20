@@ -6,7 +6,7 @@ import React from 'react';
 import { colors } from '../theme';
 
 const TEXT_WIDTH = 450;
-const IMAGE_WIDTH = 350;
+const IMAGE_WIDTH = 315;
 const IMAGE_HEIGHT = 280;
 
 const useStyles = makeStyles({
