@@ -3,6 +3,7 @@ import { Home } from './Home';
 import { About } from './About';
 import { Prime } from './projects/Prime';
 import { Chess } from './projects/Chess';
+import { Contact } from './Contact';
 
 export type PageType = {
     comp?: React.FunctionComponent;
@@ -37,6 +38,11 @@ const Pages: PageType[] = [
                 route: '/chess',
             }
         ],
+    },
+    {
+        comp: Contact,
+        title: 'Contact',
+        route: '/contact',
     },
 ];
 

@@ -61,7 +61,7 @@ export const Navbar = (props: NavbarProps) => {
                                     option.subRoutes.map( (sub) => {
                                         let route = `${option.route}${sub.route}`;
                                         return (
-                                            <MenuOption title={sub.title} route={route} />
+                                            <MenuOption key={route} title={sub.title} route={route} />
                                         )
                                     })
                                 }
