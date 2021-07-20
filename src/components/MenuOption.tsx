@@ -26,7 +26,7 @@ export const MenuOption = (props: MenuOptionProps) => {
     }
 
     return (
-        <MenuItem className={classes.menuOption} onClick={() => { routeTo(route)}}>
+        <MenuItem key={route} className={classes.menuOption} onClick={() => { routeTo(route)}}>
             <Typography variant="h6">{title}</Typography>
         </MenuItem>
     );
