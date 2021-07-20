@@ -33,7 +33,7 @@ export const SkillContent = (props: SkillContentProps) => {
 
     
     return (
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
         <Box className={classes.content}>
             <img src={img} alt={alt} className={classes.image}/>
             <Box>
