@@ -1,11 +1,9 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
+import { PageTitle } from '../../components/PageTitle';
 
 
 export const Prime = () => {
     return (
-            <Typography variant="h1">
-                Prime
-            </Typography>
+            <PageTitle text="Prime Number Generator" />
     )
 }
