@@ -47,30 +47,15 @@ export const Content = (props: ContentProps) => {
 
 
     return (
-        <>
+        <Grid item container alignItems="center" xs={12} spacing={3}>
             {(img && imgPosition === 'left') && <Grid item ><img src={img} alt={alt} className={classes.image}/></Grid>}
             <Grid item >
                 <Box>
-                    <Typography className={classes.title} variant='h5'>{title}</Typography>
-                    <Typography className={classes.body} variant="body1">{body}</Typography>
+                    { title && <Typography className={classes.title} variant='h5'>{title}</Typography>}
+                    { body && <Typography className={classes.body} variant="body1">{body}</Typography>}
                 </Box>
             </Grid>
             {(img && imgPosition === 'right') && <Grid item ><img src={img} alt={alt} className={classes.image}/></Grid>}
-        </>
-    )
-
-
-
-    return (
-        <>
-            {(img && imgPosition === 'left') && <Grid item sm={12} md={4} lg={4} xl={2}><img src={img} alt={alt} className={classes.image}/></Grid>}
-            <Grid item sm={12} md={3} lg={4} xl={4}>
-                <Box>
-                    <Typography className={classes.title} variant='h5'>{title}</Typography>
-                    <Typography className={classes.body} variant="body1">{body}</Typography>
-                </Box>
-            </Grid>
-            {(img && imgPosition === 'right') && <Grid item sm={12} md={3} lg={7}><img src={img} alt={alt} className={classes.image}/></Grid>}
-        </>
+        </Grid>
     )
 }
