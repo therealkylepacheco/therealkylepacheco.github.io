@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/static/js/main.5f18f4ca.chunk.js",
-    "main.js.map": "/static/js/main.5f18f4ca.chunk.js.map",
+    "main.js": "/static/js/main.f63cd12e.chunk.js",
+    "main.js.map": "/static/js/main.f63cd12e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.32e83b8c.js",
     "runtime-main.js.map": "/static/js/runtime-main.32e83b8c.js.map",
-    "static/js/2.4d8d4812.chunk.js": "/static/js/2.4d8d4812.chunk.js",
-    "static/js/2.4d8d4812.chunk.js.map": "/static/js/2.4d8d4812.chunk.js.map",
+    "static/js/2.8c502167.chunk.js": "/static/js/2.8c502167.chunk.js",
+    "static/js/2.8c502167.chunk.js.map": "/static/js/2.8c502167.chunk.js.map",
     "static/js/3.502d03b6.chunk.js": "/static/js/3.502d03b6.chunk.js",
     "static/js/3.502d03b6.chunk.js.map": "/static/js/3.502d03b6.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.4d8d4812.chunk.js.LICENSE.txt": "/static/js/2.4d8d4812.chunk.js.LICENSE.txt",
+    "static/js/2.8c502167.chunk.js.LICENSE.txt": "/static/js/2.8c502167.chunk.js.LICENSE.txt",
     "static/media/agile.7d7a6673.png": "/static/media/agile.7d7a6673.png",
     "static/media/c.da6ce098.png": "/static/media/c.da6ce098.png",
     "static/media/cPlusPlus.018a61ee.png": "/static/media/cPlusPlus.018a61ee.png",
@@ -20,7 +20,7 @@
     "static/media/java.c2d9a0f7.png": "/static/media/java.c2d9a0f7.png",
     "static/media/kount.f92f4340.png": "/static/media/kount.f92f4340.png",
     "static/media/liiingo.7d60b73a.png": "/static/media/liiingo.7d60b73a.png",
-    "static/media/logo.6ce24c58.svg": "/static/media/logo.6ce24c58.svg",
+    "static/media/me.0e3312a3.png": "/static/media/me.0e3312a3.png",
     "static/media/nnu.0d4d53a2.png": "/static/media/nnu.0d4d53a2.png",
     "static/media/php.9e4fe8e6.png": "/static/media/php.9e4fe8e6.png",
     "static/media/reactJs.396d3bf9.png": "/static/media/reactJs.396d3bf9.png",
@@ -28,8 +28,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.32e83b8c.js",
-    "static/js/2.4d8d4812.chunk.js",
+    "static/js/2.8c502167.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.5f18f4ca.chunk.js"
+    "static/js/main.f63cd12e.chunk.js"
   ]
 }
