@@ -1,14 +1,16 @@
-import Box from '@material-ui/core/Box';
-import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import React from 'react';
 import { colors } from '../theme';
-import { SectionTitle } from './SectionTitle';
 
 const useStyles = makeStyles({
   message: {
       color: colors.primary,
+  },
+  link: {
+    color: colors.secondary,
+    textDecoration: 'none',
   },
 });
 
@@ -21,6 +23,8 @@ export const RepoMessage = (props: RepoMessageProps) => {
     const classes = useStyles();
 
     return (
-        <Typography variant="h4" className={classes.message}>Check out the repo on <a rel="noreferrer" target="_blank" href={link}>Github</a></Typography>
+        <Typography variant="h4" className={classes.message}>
+            Check out the repo on <a className={classes.link} rel="noreferrer" target="_blank" href={link}>Github <GitHubIcon /></a>
+        </Typography>
     );
 }
