@@ -26,6 +26,7 @@ const useStyles = makeStyles({
   image: {
       maxWidth: IMAGE_WIDTH,
       maxHeight: IMAGE_HEIGHT,
+      cursor: 'pointer',
   },
 });
 
@@ -34,6 +35,7 @@ export type ContentProps = {
     body?: string;
     img?: string;
     alt?: string;
+    link?: string;
     imgPosition?: 'left' | 'right';
 };
 
@@ -42,20 +44,22 @@ const defaultProps: Partial<ContentProps> = {
 };
 
 export const Content = (props: ContentProps) => {
-    const { title, body, img, alt, imgPosition } = { ...defaultProps, ...props };
+    const { title, body, img, alt, imgPosition, link } = { ...defaultProps, ...props };
     const classes = useStyles();
+
+    const handleClick = () => link ? window.open(link, "_blank") : {};
 
 
     return (
         <Grid item container alignItems="center" xs={12} spacing={3}>
-            {(img && imgPosition === 'left') && <Grid item ><img src={img} alt={alt} className={classes.image}/></Grid>}
+            {(img && imgPosition === 'left') && <Grid item ><img src={img} alt={alt} className={classes.image} onClick={handleClick}/></Grid>}
             <Grid item >
                 <Box>
                     { title && <Typography className={classes.title} variant='h5'>{title}</Typography>}
                     { body && <Typography className={classes.body} variant="body1">{body}</Typography>}
                 </Box>
             </Grid>
-            {(img && imgPosition === 'right') && <Grid item ><img src={img} alt={alt} className={classes.image}/></Grid>}
+            {(img && imgPosition === 'right') && <Grid item ><img src={img} alt={alt} className={classes.image} onClick={handleClick}/></Grid>}
         </Grid>
     )
 }
