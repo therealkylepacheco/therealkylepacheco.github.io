@@ -1,32 +1,30 @@
-import { RepoMessage } from '../../components/RepoMessage';
-import React from 'react';
-import { PageTitle } from '../../components/PageTitle';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import makeStyles from '@material-ui/core/styles/makeStyles';
-import { colors } from '../../theme';
+import Typography from '@material-ui/core/Typography';
+import React from 'react';
+import { CodePreview } from '../../components/CodePreview';
+import { PageTitle } from '../../components/PageTitle';
+import { RepoMessage } from '../../components/RepoMessage';
 
 const useStyles = makeStyles({
     desc: {
         maxWidth: 750,
     },
-    codeOutput: {
-        display: 'flex',
-        flexDirection: 'column',
-        backgroundColor: colors.secondary,
-        borderRadius: 5,
-        paddingLeft: 25,
-        maxWidth: 500,
-        marginTop: 25,
-        marginBottom: 25,
-    },
-    code: {
-        fontFamily: 'Courier New',
-    }
   });
 
 export const Prime = () => {
     const classes = useStyles();
+    const codeOutput = [
+        "$ java Main 1 25",
+        "2",
+        "3",
+        "5",
+        "7",
+        "11",
+        "13",
+        "17",
+        "19",
+        "23"
+    ];
     return (
         <>
             <PageTitle text="Prime Number Generator" />
@@ -39,18 +37,7 @@ export const Prime = () => {
             <Typography className={classes.desc} variant="h6">
                 Here is some example output from the program. All the prime numbers between 1 and 25 are printed to the terminal.
             </Typography>
-            <Box className={classes.codeOutput}>
-                <Typography className={classes.code}>$ java Main 1 25</Typography>
-                <Typography className={classes.code}>2</Typography>
-                <Typography className={classes.code}>3</Typography>
-                <Typography className={classes.code}>5</Typography>
-                <Typography className={classes.code}>7</Typography>
-                <Typography className={classes.code}>11</Typography>
-                <Typography className={classes.code}>13</Typography>
-                <Typography className={classes.code}>17</Typography>
-                <Typography className={classes.code}>19</Typography>
-                <Typography className={classes.code}>23</Typography>
-            </Box>
+            <CodePreview lines={codeOutput} />
             <Typography variant="h6">
                 Follow the ReadMe on the repo to try out the project!
             </Typography>
