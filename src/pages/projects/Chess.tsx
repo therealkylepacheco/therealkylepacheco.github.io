@@ -16,7 +16,7 @@ export const Chess = () => {
         <>
             <PageTitle text="Chess" />
             <Typography className={classes.desc} variant='h6'>
-                Work in progress. 
+                Work in progress. Check back later for more updates.
             </Typography>
         </>
     )
