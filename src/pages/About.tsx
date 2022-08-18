@@ -15,6 +15,7 @@ import javaLogo from "../images/java.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
 import nnuLogo from "../images/nnu.png";
+import plextracLogo from "../images/plextrac.png";
 import phpLogo from "../images/php.png";
 import reactLogo from "../images/reactJs.png";
 import reduxLogo from "../images/redux.png";
@@ -27,23 +28,23 @@ export const About = () => {
       <ResponsiveContent sectionTitle="Experience">
         <Content
           link="https://www.plextrac.com"
-          title="Software Developer, Liiingo (2021-Present)"
-          img={liiingoLogo}
-          alt="Liiingo"
+          title="Software Engineer, PlexTrac (2022-Present)"
+          img={plextracLogo}
+          alt="PlexTrac"
         >
-          I currently work as a software developer at Liiingo. The majority of
-          my work is on the front end of a web app in ReactJS. I build custom
-          components based on feature requests, implement UX designs, and
-          interact with a Redux state store.
+          I currently work as a software engineer at PlexTrac. I am a member of
+          the rapid feature development team. I work as a fullstack developer,
+          focusing on the frontend UI, backend API, and how the two interact
+          with one another.
         </Content>
         <Content
           link="https://www.liiingo.com"
-          title="Software Developer, Liiingo (2021-Present)"
+          title="Software Developer, Liiingo (2021)"
           img={liiingoLogo}
           alt="Liiingo"
         >
-          I currently work as a software developer at Liiingo. The majority of
-          my work is on the front end of a web app in ReactJS. I build custom
+          While working at Liiingo as a software developer, the majority of my
+          work is on the front end of a web app in ReactJS. I build custom
           components based on feature requests, implement UX designs, and
           interact with a Redux state store.
         </Content>
