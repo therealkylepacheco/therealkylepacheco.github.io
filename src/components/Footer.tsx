@@ -5,7 +5,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import { colors } from "../theme";
-import { ContactButton } from "./ContactButton";
+import ContactButton from "./ContactButton";
 
 const useStyles = makeStyles({
   box: {

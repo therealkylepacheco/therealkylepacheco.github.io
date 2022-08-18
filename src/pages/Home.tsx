@@ -1,5 +1,5 @@
 import React from "react";
-import { Content } from "../components/Content";
+import Content from "../components/Content";
 import { PageTitle } from "../components/PageTitle";
 import { ResponsiveContent } from "../components/ResponsiveContent";
 import me from "../images/me.png";

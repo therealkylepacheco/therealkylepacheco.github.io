@@ -1,5 +1,5 @@
 import React from "react";
-import { Code, CodeOutput } from "./CodePreview.styled";
+import { Code, CodeOutput } from "./CodePreview.styles";
 
 export type CodePreviewProps = {
   lines: string[];
