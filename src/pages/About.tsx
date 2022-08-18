@@ -1,6 +1,5 @@
 import Grid from "@material-ui/core/Grid";
 import React from "react";
-import Content from "../components/Content";
 import { PageTitle } from "../components/PageTitle";
 import { ResponsiveContent } from "../components/ResponsiveContent";
 import { SectionTitle } from "../components/SectionTitle";
@@ -20,6 +19,7 @@ import phpLogo from "../images/php.png";
 import reactLogo from "../images/reactJs.png";
 import reduxLogo from "../images/redux.png";
 import typescriptLogo from "../images/typescript.png";
+import Content from "../components/Content";
 
 export const About = () => {
   return (
