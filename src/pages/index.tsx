@@ -1,49 +1,49 @@
-import React from 'react';
-import { Home } from './Home';
-import { About } from './About';
-import { Prime } from './projects/Prime';
-import { Chess } from './projects/Chess';
-import { Contact } from './Contact';
+import React from "react";
+import { Home } from "./Home";
+import { About } from "./About";
+import { Prime } from "./projects/Prime";
+import { Chess } from "./projects/Chess";
+import { Contact } from "./Contact";
 
 export type PageType = {
-    comp?: React.FunctionComponent;
-    title: string;
-    route: string;
-    subRoutes?: PageType[];
+  comp?: React.FunctionComponent;
+  title: string;
+  route: string;
+  subRoutes?: PageType[];
 };
 
 const Pages: PageType[] = [
-    {
-        comp: Home,
-        title: 'Home',
-        route: '/'
-    },
-    {
-        comp: About,
-        title: 'About',
-        route: '/about',
-    },
-    {
-        title: 'Projects',
-        route: '/projects',
-        subRoutes: [
-            {
-                comp: Prime,
-                title: 'Prime',
-                route: '/prime',
-            },
-            {
-                comp: Chess,
-                title: 'Chess',
-                route: '/chess',
-            }
-        ],
-    },
-    {
-        comp: Contact,
-        title: 'Contact',
-        route: '/contact',
-    },
+  {
+    comp: Home,
+    title: "Home",
+    route: "/",
+  },
+  {
+    comp: About,
+    title: "About",
+    route: "/about",
+  },
+  {
+    title: "Projects",
+    route: "/projects",
+    subRoutes: [
+      {
+        comp: Prime,
+        title: "Prime",
+        route: "/prime",
+      },
+      {
+        comp: Chess,
+        title: "Chess",
+        route: "/chess",
+      },
+    ],
+  },
+  {
+    comp: Contact,
+    title: "Contact",
+    route: "/contact",
+  },
 ];
 
 export default Pages;
