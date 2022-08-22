@@ -1,9 +1,5 @@
 import Grid from "@material-ui/core/Grid";
 import React from "react";
-import { PageTitle } from "../components/PageTitle";
-import { ResponsiveContent } from "../components/ResponsiveContent";
-import { SectionTitle } from "../components/SectionTitle";
-import { SkillContent } from "../components/SkillContent";
 import agileLogo from "../images/agile.png";
 import cLogo from "../images/c.png";
 import cPlusPlusLogo from "../images/cPlusPlus.png";
@@ -20,6 +16,10 @@ import reactLogo from "../images/reactJs.png";
 import reduxLogo from "../images/redux.png";
 import typescriptLogo from "../images/typescript.png";
 import Content from "../components/Content";
+import PageTitle from "../components/PageTitle";
+import ResponsiveContent from "../components/ResponsiveContent";
+import SectionTitle from "../components/SectionTitle";
+import SkillContent from "../components/SkillContent";
 
 export const About = () => {
   return (

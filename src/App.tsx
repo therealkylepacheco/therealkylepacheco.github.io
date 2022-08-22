@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Navbar, navbarHeight } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
+import { Navbar } from "./components/Navbar/Navbar";
+import { navbarHeight } from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
 import { colors } from "./theme";
 

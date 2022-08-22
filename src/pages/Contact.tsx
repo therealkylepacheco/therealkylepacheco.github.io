@@ -4,7 +4,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import ContactButtonLarge from "../components/ContactButtonLarge";
-import { PageTitle } from "../components/PageTitle";
+import PageTitle from "../components/PageTitle";
 
 const useStyles = makeStyles({
   icon: {

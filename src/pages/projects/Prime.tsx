@@ -2,8 +2,8 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import Typography from "@material-ui/core/Typography";
 import React from "react";
 import CodePreview from "../../components/CodePreview";
-import { PageTitle } from "../../components/PageTitle";
-import { RepoMessage } from "../../components/RepoMessage";
+import PageTitle from "../../components/PageTitle";
+import RepoMessage from "../../components/RepoMessage";
 
 const useStyles = makeStyles({
   desc: {

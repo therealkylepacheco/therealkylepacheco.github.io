@@ -1,7 +1,7 @@
 import React from "react";
 import Content from "../components/Content";
-import { PageTitle } from "../components/PageTitle";
-import { ResponsiveContent } from "../components/ResponsiveContent";
+import PageTitle from "../components/PageTitle";
+import ResponsiveContent from "../components/ResponsiveContent";
 import me from "../images/me.png";
 
 export const Home = () => {
@@ -15,8 +15,8 @@ export const Home = () => {
           Building out new products and solving complex problems while
           collaborating with my teammates are the highlights of my day to day.
           Both frontend and backend development interest me and I have
-          experience in both. Outside of work, I enjoy reading and trying new
-          things with my friends.
+          experience in both. Outside of work, you'll find me hiking, reading,
+          or working on my house.
         </Content>
       </ResponsiveContent>
     </>
