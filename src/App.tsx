@@ -14,6 +14,8 @@ const useStyles = makeStyles({
   },
   content: {
     padding: navbarHeight,
+    display: "flex",
+    flexDirection: "column",
   },
 });
 

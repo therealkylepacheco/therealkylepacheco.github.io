@@ -27,7 +27,7 @@ export const MenuButton: React.FC<MenuButtonProps> = (props) => {
 
   return (
     <MenuButtonBase ref={anchor} key={title} onClick={handleClick}>
-      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h4">{title}</Typography>
       <Menu
         className={classes.menu}
         id={`${title}-menu`}

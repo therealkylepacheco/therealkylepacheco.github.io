@@ -19,7 +19,7 @@ export const MenuOption = (props: MenuOptionProps) => {
         routeTo(route);
       }}
     >
-      <Typography variant="h6">{title}</Typography>
+      <Typography variant="h4">{title}</Typography>
     </MenuItemStyled>
   );
 };

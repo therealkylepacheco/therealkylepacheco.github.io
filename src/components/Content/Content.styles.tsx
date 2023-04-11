@@ -6,10 +6,11 @@ const TEXT_WIDTH = 450;
 const IMAGE_WIDTH = 315;
 const IMAGE_HEIGHT = 280;
 
-export const ContentImage = styled.img`
+export const ContentImage = styled.img<{ imgRounded?: boolean }>`
   max-width: ${IMAGE_WIDTH}px;
   max-height: ${IMAGE_HEIGHT}px;
   cursor: "pointer";
+  border-radius: ${(p) => (p.imgRounded ? "50%" : "0%")};
 `;
 
 export const ContentTitle = styled(Typography)`

@@ -11,14 +11,16 @@ export type ContentProps = {
   alt?: string;
   link?: string;
   imgPosition?: "left" | "right";
+  imgRounded?: boolean;
 };
 
 const defaultProps: Partial<ContentProps> = {
   imgPosition: "right",
+  imgRounded: false,
 };
 
 export const Content: React.FC<ContentProps> = (props) => {
-  const { title, img, alt, imgPosition, link, children } = {
+  const { title, img, imgRounded, alt, imgPosition, link, children } = {
     ...defaultProps,
     ...props,
   };
@@ -29,7 +31,12 @@ export const Content: React.FC<ContentProps> = (props) => {
     <Grid item container alignItems="center" xs={12} spacing={3}>
       {img && imgPosition === "left" && (
         <Grid item>
-          <ContentImage src={img} alt={alt} onClick={handleClick} />
+          <ContentImage
+            imgRounded={imgRounded}
+            src={img}
+            alt={alt}
+            onClick={handleClick}
+          />
         </Grid>
       )}
       <Grid item>
@@ -40,7 +47,12 @@ export const Content: React.FC<ContentProps> = (props) => {
       </Grid>
       {img && imgPosition === "right" && (
         <Grid item>
-          <ContentImage src={img} alt={alt} onClick={handleClick} />
+          <ContentImage
+            imgRounded={imgRounded}
+            src={img}
+            alt={alt}
+            onClick={handleClick}
+          />
         </Grid>
       )}
     </Grid>
