@@ -17,19 +17,28 @@ interface Props extends GridProps {
   img?: string;
   alt?: string;
   imgLink?: string;
+  route?: string;
 }
 
 export const InfoCard = (props: Props) => {
-  const { title, body, img, alt, imgLink, ...other } = props;
+  const { title, body, img, alt, imgLink, route, ...other } = props;
 
-  const { expanded, handleExpand, handleClickImage } = useInfoCard(imgLink);
+  const { expanded, handleExpand, handleClickImage, routeTo } = useInfoCard(
+    imgLink,
+    route
+  );
 
   return (
     <Grid item {...other}>
-      <ThemedCard>
+      <ThemedCard onClick={routeTo} route={route}>
         <CardContentContainer>
           {img && alt && (
-            <CardImage src={img} alt="PlexTrac" onClick={handleClickImage} />
+            <CardImage
+              src={img}
+              alt="PlexTrac"
+              imgLink={imgLink}
+              onClick={handleClickImage}
+            />
           )}
           <Typography variant="h4">{title}</Typography>
         </CardContentContainer>

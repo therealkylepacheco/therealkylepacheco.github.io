@@ -5,9 +5,10 @@ import { colors } from "../../theme";
 const IMAGE_WIDTH = "315px";
 const IMAGE_HEIGHT = "280px";
 
-export const ThemedCard = styled(Card)`
+export const ThemedCard = styled(Card)<{ route?: string }>`
   background-color: ${colors.primary};
   color: ${colors.picture_background};
+  cursor: ${(props) => (props.route ? "pointer" : "")};
 `;
 
 export const CardContentContainer = styled(CardContent)`
@@ -17,10 +18,10 @@ export const CardContentContainer = styled(CardContent)`
   padding-bottom: 0px;
 `;
 
-export const CardImage = styled.img<{ imgRounded?: boolean }>`
+export const CardImage = styled.img<{ imgRounded?: boolean; imgLink?: string }>`
   max-width: ${IMAGE_WIDTH};
   max-height: ${IMAGE_HEIGHT};
-  cursor: "pointer";
+  cursor: ${(props) => (props.imgLink ? "pointer" : "")};
   background-color: ${colors.picture_background};
   border-radius: 5px;
   padding: 10px;

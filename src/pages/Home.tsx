@@ -3,6 +3,8 @@ import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
 import ResponsiveContent from "../components/ResponsiveContent";
 import me from "../images/me.png";
+import Grid from "@material-ui/core/Grid";
+import { InfoCard } from "../components/InfoCard/InfoCard";
 
 export const Home = () => {
   return (
@@ -16,6 +18,13 @@ export const Home = () => {
         >
           <PageTitle text="Kyle Pacheco" />
         </Content>
+        <Grid container spacing={2} justifyContent="space-between">
+          <InfoCard title="Experience" route="/experience" xs={12} sm={4} />
+          <InfoCard title="Projects" route="/projects" xs={12} sm={4} />{" "}
+          {/* TODO KDP Add hidden route that just links to all projects */}
+          <InfoCard title="Skills" route="/skills" xs={12} sm={4} />
+        </Grid>
+        {/* KDP TODO: Add What's New? Section */}
       </ResponsiveContent>
     </>
   );
