@@ -9,7 +9,7 @@ import {
   NavbarContainer,
 } from "./Navbar.styles";
 import { useNavbar } from "./useNavbar";
-import { PageType } from "../../pages";
+import { PageType } from "../../pages/types";
 
 export type NavbarProps = {
   options: PageType[];

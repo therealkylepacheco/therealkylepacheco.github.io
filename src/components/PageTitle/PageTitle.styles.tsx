@@ -3,6 +3,6 @@ import styled from "styled-components";
 import { colors } from "../../theme";
 
 export const Title = styled(Typography)`
-  color: ${colors.picture_background};
+  color: ${colors.secondary};
   margin-top: 15px;
 `;

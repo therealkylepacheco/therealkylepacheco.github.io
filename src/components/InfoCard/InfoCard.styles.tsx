@@ -7,7 +7,7 @@ const IMAGE_HEIGHT = "280px";
 
 export const ThemedCard = styled(Card)<{ route?: string }>`
   background-color: ${colors.primary};
-  color: ${colors.picture_background};
+  color: ${colors.secondary};
   cursor: ${(props) => (props.route ? "pointer" : "")};
 `;
 
@@ -22,7 +22,7 @@ export const CardImage = styled.img<{ imgRounded?: boolean; imgLink?: string }>`
   max-width: ${IMAGE_WIDTH};
   max-height: ${IMAGE_HEIGHT};
   cursor: ${(props) => (props.imgLink ? "pointer" : "")};
-  background-color: ${colors.picture_background};
+  background-color: ${colors.secondary};
   border-radius: 5px;
   padding: 10px;
 `;
@@ -36,5 +36,5 @@ export const ExpandIconButton = styled(IconButton)<{ expanded?: boolean }>`
     transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)';
     transform: ${(props) =>
       props.expanded ? "rotate(180deg)" : "rotate(0deg)"};
-    color: ${colors.picture_background};
+    color: ${colors.secondary};
 `;

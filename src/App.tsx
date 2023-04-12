@@ -28,11 +28,45 @@ function App() {
       <div className={classes.content}>
         <Switch>
           {pages.map((page) => {
+            // return (
+            //   <Route
+            //     key={page.route}
+            //     exact={page.title === "Home"}
+            //     path={page.route}
+            //     component={page.comp}
+            //   />
+            // );
             if (page.subRoutes) {
-              return page.subRoutes.map((sub) => {
+              let baseRoute = (
+                <Route
+                  key={page.route}
+                  path={page.route}
+                  component={page.comp}
+                />
+              );
+              let subRoutes = page.subRoutes.map((sub) => {
                 let route = `${page.route}${sub.route}`;
-                return <Route key={route} path={route} component={sub.comp} />;
+                return (
+                  <Route
+                    key={route}
+                    path={route}
+                    component={sub.comp}
+                    exact={true}
+                  />
+                );
               });
+              return [...subRoutes, baseRoute];
+              // return (
+              //   <Route path={page.route} component={page.comp}>
+              //     {page.subRoutes.map((sub) => (
+              //       <Route
+              //         key={`${page.route}${sub.route}`}
+              //         path={`${page.route}${sub.route}`}
+              //         component={sub.comp}
+              //       />
+              //     ))}
+              //   </Route>
+              // );
             } else {
               return (
                 <Route

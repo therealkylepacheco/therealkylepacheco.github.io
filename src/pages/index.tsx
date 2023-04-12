@@ -1,21 +1,13 @@
-import React from "react";
 import { Home } from "./Home";
 import { Experience } from "./Experience";
-import { Prime } from "./projects/Prime";
-import { Chess } from "./projects/Chess";
 import { Contact } from "./Contact";
 import logo from "../images/logo.png";
 import { Education } from "./Education";
 import { About } from "./About";
 import { Skills } from "./Skills";
-
-export type PageType = {
-  comp?: React.FunctionComponent;
-  title: string;
-  route: string;
-  subRoutes?: PageType[];
-  img?: string;
-};
+import { PageType } from "./types";
+import { Projects } from "./projects/constants";
+import { ProjectsPage } from "./projects/ProjectsPage";
 
 const Pages: PageType[] = [
   {
@@ -47,18 +39,8 @@ const Pages: PageType[] = [
   {
     title: "Projects",
     route: "/projects",
-    subRoutes: [
-      {
-        comp: Prime,
-        title: "Prime",
-        route: "/prime",
-      },
-      {
-        comp: Chess,
-        title: "Chess",
-        route: "/chess",
-      },
-    ],
+    comp: ProjectsPage,
+    subRoutes: Projects,
   },
   {
     comp: Contact,

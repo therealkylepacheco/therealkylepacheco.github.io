@@ -9,7 +9,7 @@ import { colors } from "../../theme";
 const useStyles = makeStyles({
   menu: {
     "& .MuiPaper-root": {
-      backgroundColor: colors.secondary,
+      backgroundColor: colors.primary,
     },
   },
 });
