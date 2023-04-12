@@ -7,6 +7,7 @@ import { Contact } from "./Contact";
 import logo from "../images/logo.png";
 import { Education } from "./Education";
 import { About } from "./About";
+import { Skills } from "./Skills";
 
 export type PageType = {
   comp?: React.FunctionComponent;
@@ -32,6 +33,11 @@ const Pages: PageType[] = [
     comp: Experience,
     title: "Experience",
     route: "/experience",
+  },
+  {
+    comp: Skills,
+    title: "Skills",
+    route: "/skills",
   },
   {
     comp: Education,

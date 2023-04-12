@@ -3,6 +3,9 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import styled from "styled-components";
 import { colors } from "../../theme";
 
+// KDP TODO: Change to use vh, vw for sizing and make appropriate for mobile view
+// KDP TODO: Improve theme color naming
+
 const buttonSpacing = "35px";
 const navbarRaw = 150;
 export const navbarHeight = `${navbarRaw}px`;
