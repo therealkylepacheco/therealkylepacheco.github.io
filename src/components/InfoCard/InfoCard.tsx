@@ -28,6 +28,8 @@ export const InfoCard = (props: Props) => {
     route
   );
 
+  // KDP TODO: Add key points (bulleted list that displays before summary)
+
   return (
     <Grid item {...other}>
       <ThemedCard onClick={routeTo} route={route}>
