@@ -54,7 +54,7 @@ export const InfoCard = (props: Props) => {
             </ThemedCardActions>
             <Collapse in={expanded} unmountOnExit>
               <CardContentContainer>
-                {keyPoints && <KeyPoints points={keyPoints} />}
+                {keyPoints && <KeyPoints variant="h5" points={keyPoints} />}
                 {body && (
                   <InfoCardBody variant="h5" padding={bodyPadding}>
                     {body}

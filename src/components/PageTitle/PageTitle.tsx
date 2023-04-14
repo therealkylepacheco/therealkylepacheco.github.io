@@ -6,7 +6,7 @@ export type PageTitleProps = {
 };
 
 export const PageTitle = (props: PageTitleProps) => {
-  const { text } = { ...props };
+  const { text } = props;
 
   return <Title variant="h2">{text}</Title>;
 };

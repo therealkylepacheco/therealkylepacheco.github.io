@@ -4,6 +4,9 @@ import { colors } from "../../theme";
 export const KeyPointsContainer = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  color: ${colors.secondary};
 `;
 
 export const KeyPointsDivider = styled.div`
