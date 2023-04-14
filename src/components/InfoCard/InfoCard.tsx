@@ -56,7 +56,7 @@ export const InfoCard = (props: Props) => {
               <CardContentContainer>
                 {keyPoints && <KeyPoints variant="h5" points={keyPoints} />}
                 {body && (
-                  <InfoCardBody variant="h5" padding={bodyPadding}>
+                  <InfoCardBody variant="h5" body_padding={bodyPadding}>
                     {body}
                   </InfoCardBody>
                 )}

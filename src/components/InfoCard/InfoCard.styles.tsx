@@ -33,8 +33,8 @@ export const CardImage = styled.img<{ imgRounded?: boolean; imgLink?: string }>`
   padding: 10px;
 `;
 
-export const InfoCardBody = styled(Typography)<{ padding?: boolean }>`
-  padding-top: ${(props) => (props.padding ? "30px" : "")};
+export const InfoCardBody = styled(Typography)<{ body_padding?: boolean }>`
+  padding-top: ${(props) => (props.body_padding ? "30px" : "")};
 `;
 
 export const ThemedCardActions = styled(CardActions)`
