@@ -6,6 +6,7 @@ import me from "../images/me.png";
 import Grid from "@material-ui/core/Grid";
 import { InfoCard } from "../components/InfoCard/InfoCard";
 import { KeyPoints } from "../components/KeyPoints/KeyPoints";
+import { WhatsNew } from "../components/WhatsNew/WhatsNew";
 
 export const Home = () => {
   return (
@@ -28,7 +29,7 @@ export const Home = () => {
           <InfoCard title="Projects" route="/projects" xs={12} sm={4} />{" "}
           <InfoCard title="Skills" route="/skills" xs={12} sm={4} />
         </Grid>
-        {/* KDP TODO: Add What's New? Section */}
+        <WhatsNew />
       </ResponsiveContent>
     </>
   );
