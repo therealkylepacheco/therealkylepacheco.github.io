@@ -5,11 +5,13 @@ import {
   CardContentContainer,
   CardImage,
   ExpandIconButton,
+  InfoCardBody,
   ThemedCard,
   ThemedCardActions,
 } from "./InfoCard.styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import useInfoCard from "./useInfoCard";
+import { KeyPoints } from "../KeyPoints/KeyPoints";
 
 interface Props extends GridProps {
   title: string;
@@ -18,15 +20,14 @@ interface Props extends GridProps {
   alt?: string;
   imgLink?: string;
   route?: string;
+  keyPoints?: string[];
 }
 
 export const InfoCard = (props: Props) => {
-  const { title, body, img, alt, imgLink, route, ...other } = props;
+  const { title, body, img, alt, imgLink, route, keyPoints, ...other } = props;
 
-  const { expanded, handleExpand, handleClickImage, routeTo } = useInfoCard(
-    imgLink,
-    route
-  );
+  const { expanded, handleExpand, handleClickImage, routeTo, bodyPadding } =
+    useInfoCard(imgLink, route, keyPoints);
 
   // KDP TODO: Add key points (bulleted list that displays before summary)
 
@@ -44,7 +45,7 @@ export const InfoCard = (props: Props) => {
           )}
           <Typography variant="h4">{title}</Typography>
         </CardContentContainer>
-        {body && (
+        {(body || keyPoints) && (
           <>
             <ThemedCardActions disableSpacing>
               <ExpandIconButton expanded={expanded} onClick={handleExpand}>
@@ -53,7 +54,12 @@ export const InfoCard = (props: Props) => {
             </ThemedCardActions>
             <Collapse in={expanded} unmountOnExit>
               <CardContentContainer>
-                <Typography variant="h5">{body}</Typography>
+                {keyPoints && <KeyPoints points={keyPoints} />}
+                {body && (
+                  <InfoCardBody variant="h5" padding={bodyPadding}>
+                    {body}
+                  </InfoCardBody>
+                )}
               </CardContentContainer>
             </Collapse>
           </>

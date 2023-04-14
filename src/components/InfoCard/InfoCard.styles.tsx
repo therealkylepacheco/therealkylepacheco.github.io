@@ -1,4 +1,10 @@
-import { Card, CardActions, CardContent, IconButton } from "@material-ui/core";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  IconButton,
+  Typography,
+} from "@material-ui/core";
 import styled from "styled-components";
 import { colors } from "../../theme";
 
@@ -25,6 +31,10 @@ export const CardImage = styled.img<{ imgRounded?: boolean; imgLink?: string }>`
   background-color: ${colors.secondary};
   border-radius: 5px;
   padding: 10px;
+`;
+
+export const InfoCardBody = styled(Typography)<{ padding?: boolean }>`
+  padding-top: ${(props) => (props.padding ? "30px" : "")};
 `;
 
 export const ThemedCardActions = styled(CardActions)`

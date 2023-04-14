@@ -1,7 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const useInfoCard = (link?: string, route?: string) => {
+const useInfoCard = (link?: string, route?: string, keyPoints?: string[]) => {
   const [expanded, setExpanded] = useState(false);
 
   const history = useHistory();
@@ -18,11 +18,17 @@ const useInfoCard = (link?: string, route?: string) => {
     [link]
   );
 
+  const bodyPadding: boolean = useMemo(
+    () => (keyPoints ? keyPoints.length > 0 : false),
+    [keyPoints]
+  );
+
   return {
     expanded,
     handleExpand,
     handleClickImage,
     routeTo,
+    bodyPadding,
   };
 };
 

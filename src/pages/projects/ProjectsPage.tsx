@@ -12,6 +12,7 @@ export const ProjectsPage = () => {
         {Projects.map((project) => (
           <InfoCard
             xs={12}
+            sm={4}
             title={project.title}
             route={`/projects${project.route}`}
           />
