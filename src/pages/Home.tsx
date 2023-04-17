@@ -1,36 +1,46 @@
 import React from "react";
-import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
-import ResponsiveContent from "../components/ResponsiveContent";
 import me from "../images/me.png";
 import Grid from "@material-ui/core/Grid";
 import { InfoCard } from "../components/InfoCard/InfoCard";
 import { KeyPoints } from "../components/KeyPoints/KeyPoints";
 import { WhatsNew } from "../components/WhatsNew/WhatsNew";
+import { ContentImage } from "../components/Content/Content.styles";
+import { ThemedGrid } from "../components/ThemedGrid/ThemedGrid";
 
 export const Home = () => {
   return (
-    <>
-      <ResponsiveContent>
-        <Content
-          img={me}
-          alt="Kyle Pacheco"
-          imgPosition="right"
-          imgRounded={true}
-        >
+    <ThemedGrid container direction="row" spacing={10}>
+      <Grid container item spacing={2}>
+        <Grid container item alignItems="center" justifyContent="space-evenly">
           <PageTitle text="Kyle Pacheco" />
-        </Content>
-        <KeyPoints
-          variant="h3"
-          points={["Software Developer", "Frontend", "Backend", "Web Dev"]}
-        />
-        <Grid container spacing={2} justifyContent="space-between">
-          <InfoCard title="Experience" route="/experience" xs={12} sm={4} />
-          <InfoCard title="Projects" route="/projects" xs={12} sm={4} />{" "}
-          <InfoCard title="Skills" route="/skills" xs={12} sm={4} />
+          <ContentImage imgRounded alt="Kyle Pacheco" src={me} />
         </Grid>
-        <WhatsNew />
-      </ResponsiveContent>
-    </>
+        <Grid item xs={12}>
+          <KeyPoints
+            variant="h4"
+            points={["Software Developer", "Frontend", "Backend", "Web Dev"]}
+          />
+        </Grid>
+      </Grid>
+      <Grid container item spacing={2} justifyContent="space-between" xs={12}>
+        <InfoCard
+          title="Experience"
+          route="/experience"
+          xs={12}
+          sm={4}
+          hoverEffect
+        />
+        <InfoCard
+          title="Projects"
+          route="/projects"
+          xs={12}
+          sm={4}
+          hoverEffect
+        />
+        <InfoCard title="Skills" route="/skills" xs={12} sm={4} hoverEffect />
+      </Grid>
+      <WhatsNew />
+    </ThemedGrid>
   );
 };

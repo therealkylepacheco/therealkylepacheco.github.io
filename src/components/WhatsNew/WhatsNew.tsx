@@ -8,7 +8,7 @@ export const WhatsNew = () => {
   const listSize = 3;
 
   return (
-    <Grid container>
+    <Grid container item>
       <Grid item xs={12}>
         <Title variant="h3">What's New?</Title>
       </Grid>
@@ -16,6 +16,7 @@ export const WhatsNew = () => {
         {Projects.map((project, index) =>
           index < listSize ? (
             <InfoCard
+              hoverEffect
               key={project.route}
               title={project.title}
               route={project.route}

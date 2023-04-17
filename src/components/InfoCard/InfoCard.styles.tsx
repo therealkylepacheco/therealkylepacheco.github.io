@@ -11,10 +11,18 @@ import { colors } from "../../theme";
 const IMAGE_WIDTH = "315px";
 const IMAGE_HEIGHT = "280px";
 
-export const ThemedCard = styled(Card)<{ route?: string }>`
-  background-color: ${colors.primary};
+export const ThemedCard = styled(Card)<{
+  route?: string;
+  hoverEffect?: boolean;
+}>`
+  background-color: ${(props) =>
+    props.hoverEffect ? colors.highlight : colors.primary};
   color: ${colors.secondary};
   cursor: ${(props) => (props.route ? "pointer" : "")};
+  transition: 0.3s;
+  :hover {
+    background-color: ${colors.primary};
+  }
 `;
 
 export const CardContentContainer = styled(CardContent)`

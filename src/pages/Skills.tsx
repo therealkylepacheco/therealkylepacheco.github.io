@@ -32,7 +32,7 @@ export const Skills = () => {
         <SkillContent title="Node" experience="3 years" img={nodeLogo} />
         <SkillContent title="Redux" experience="3 years" img={reduxLogo} />
         <SkillContent title="Ant Design" experience="2 years" img={antdLogo} />
-        <SkillContent title="Material UI" experience="1 years" img={muiLogo} />
+        <SkillContent title="Material UI" experience="1 year" img={muiLogo} />
         <SkillContent
           title="Query Writing"
           experience="SQL / NoSQL"

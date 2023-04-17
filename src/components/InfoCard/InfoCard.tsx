@@ -21,10 +21,21 @@ interface Props extends GridProps {
   imgLink?: string;
   route?: string;
   keyPoints?: string[];
+  hoverEffect?: boolean;
 }
 
 export const InfoCard = (props: Props) => {
-  const { title, body, img, alt, imgLink, route, keyPoints, ...other } = props;
+  const {
+    title,
+    body,
+    img,
+    alt,
+    imgLink,
+    route,
+    keyPoints,
+    hoverEffect,
+    ...other
+  } = props;
 
   const { expanded, handleExpand, handleClickImage, routeTo, bodyPadding } =
     useInfoCard(imgLink, route, keyPoints);
@@ -33,7 +44,7 @@ export const InfoCard = (props: Props) => {
 
   return (
     <Grid item {...other}>
-      <ThemedCard onClick={routeTo} route={route}>
+      <ThemedCard onClick={routeTo} route={route} hoverEffect={hoverEffect}>
         <CardContentContainer>
           {img && alt && (
             <CardImage

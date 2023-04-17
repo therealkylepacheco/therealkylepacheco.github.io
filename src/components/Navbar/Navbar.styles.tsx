@@ -7,7 +7,7 @@ import { colors } from "../../theme";
 // KDP TODO: Improve theme color naming
 
 const buttonSpacing = "35px";
-const navbarRaw = 150;
+export const navbarRaw = 150;
 export const navbarHeight = `${navbarRaw}px`;
 
 export const AppBarStyled = styled(AppBar)`

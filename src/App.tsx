@@ -7,10 +7,14 @@ import { navbarHeight } from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
 import { colors } from "./theme";
 
+// transparenttextures.com
+import diamond from "./images/backgrounds/diamond-upholstery.png";
+
 const useStyles = makeStyles({
   app: {
     minHeight: "100vh",
     backgroundColor: colors.background,
+    backgroundImage: `url(${diamond})`,
   },
   content: {
     padding: navbarHeight,
