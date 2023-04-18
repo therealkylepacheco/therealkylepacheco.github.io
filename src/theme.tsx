@@ -9,6 +9,7 @@ export const colors = {
   alert: "#E63946",
   greyLight: "#858585",
   white: "#FFFFFF",
+  link: "#51A6FF",
 };
 
 //6c8ab8

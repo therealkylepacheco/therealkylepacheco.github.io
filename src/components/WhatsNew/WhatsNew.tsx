@@ -19,7 +19,7 @@ export const WhatsNew = () => {
               hoverEffect
               key={project.route}
               title={project.title}
-              route={project.route}
+              route={`/projects${project.route}`}
               xs={12}
               sm={4}
             />

@@ -12,7 +12,7 @@ export const Home = () => {
   return (
     <ThemedGrid container direction="row" spacing={10}>
       <Grid container item spacing={2}>
-        <Grid container item alignItems="center" justifyContent="space-evenly">
+        <Grid container item alignItems="center" justifyContent="center">
           <PageTitle text="Kyle Pacheco" />
           <ContentImage imgRounded alt="Kyle Pacheco" src={me} />
         </Grid>

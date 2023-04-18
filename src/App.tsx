@@ -32,14 +32,6 @@ function App() {
       <div className={classes.content}>
         <Switch>
           {pages.map((page) => {
-            // return (
-            //   <Route
-            //     key={page.route}
-            //     exact={page.title === "Home"}
-            //     path={page.route}
-            //     component={page.comp}
-            //   />
-            // );
             if (page.subRoutes) {
               let baseRoute = (
                 <Route
@@ -60,17 +52,6 @@ function App() {
                 );
               });
               return [...subRoutes, baseRoute];
-              // return (
-              //   <Route path={page.route} component={page.comp}>
-              //     {page.subRoutes.map((sub) => (
-              //       <Route
-              //         key={`${page.route}${sub.route}`}
-              //         path={`${page.route}${sub.route}`}
-              //         component={sub.comp}
-              //       />
-              //     ))}
-              //   </Route>
-              // );
             } else {
               return (
                 <Route
