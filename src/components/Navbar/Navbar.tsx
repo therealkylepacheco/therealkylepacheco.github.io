@@ -12,6 +12,7 @@ import { useNavbar } from "./useNavbar";
 import { PageType } from "../../pages/types";
 import useMobilePage from "../../pages/hooks/useMobilePage";
 import { MobileNavbar } from "../MobileNavbar/MobileNavbar";
+import { MOBILE_NAV_BREAKPOINT } from "../../theme";
 
 export type NavbarProps = {
   options: PageType[];
@@ -22,10 +23,10 @@ export const Navbar = (props: NavbarProps) => {
 
   const { routeTo } = useNavbar();
 
-  const isMobile = useMobilePage(1100);
+  const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
 
   return (
-    <AppBarStyled>
+    <AppBarStyled isMobile={isMobile}>
       <NavbarContainer>
         {isMobile ? (
           <MobileNavbar options={options} />
