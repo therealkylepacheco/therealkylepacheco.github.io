@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { colors } from "../../theme";
 
 export const Message = styled(Typography)`
-  color: ${colors.primary};
+  color: ${colors.secondary};
 `;
 
 export const Link = styled.a`
-  color: ${colors.secondary};
+  color: ${colors.link};
   text-decoration: none;
 `;

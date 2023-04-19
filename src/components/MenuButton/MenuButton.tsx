@@ -4,22 +4,24 @@ import { MenuButtonBase } from "./MenuButton.styles";
 import { useMenuButton } from "./useMenuButton";
 import { makeStyles, Menu } from "@material-ui/core";
 import { colors } from "../../theme";
+import MenuIcon from "@material-ui/icons/Menu";
 
 // TODO: Convert to styled component
 const useStyles = makeStyles({
   menu: {
     "& .MuiPaper-root": {
-      backgroundColor: colors.secondary,
+      backgroundColor: colors.primary,
     },
   },
 });
 
 export type MenuButtonProps = {
-  title: string;
+  title?: string;
+  icon?: boolean;
 };
 
 export const MenuButton: React.FC<MenuButtonProps> = (props) => {
-  const { title, children } = { ...props };
+  const { title, icon, children } = { ...props };
 
   const { anchor, open, handleClick } = useMenuButton();
 
@@ -27,7 +29,8 @@ export const MenuButton: React.FC<MenuButtonProps> = (props) => {
 
   return (
     <MenuButtonBase ref={anchor} key={title} onClick={handleClick}>
-      <Typography variant="h6">{title}</Typography>
+      {title ? <Typography variant="h4">{title}</Typography> : null}
+      {icon ? <MenuIcon /> : null}
       <Menu
         className={classes.menu}
         id={`${title}-menu`}

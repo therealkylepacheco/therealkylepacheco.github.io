@@ -3,17 +3,26 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
-import { navbarHeight } from "./components/Navbar/Navbar.styles";
+import { navbarHeight, navbarRaw } from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
 import { colors } from "./theme";
+
+// transparenttextures.com
+import diamond from "./images/backgrounds/diamond-upholstery.png";
 
 const useStyles = makeStyles({
   app: {
     minHeight: "100vh",
     backgroundColor: colors.background,
+    backgroundImage: `url(${diamond})`,
   },
   content: {
-    padding: navbarHeight,
+    paddingTop: navbarHeight,
+    paddingBottom: navbarHeight,
+    paddingLeft: `${navbarRaw}vw`,
+    paddingRight: `${navbarRaw}vw`,
+    display: "flex",
+    flexDirection: "column",
   },
 });
 
@@ -27,10 +36,25 @@ function App() {
         <Switch>
           {pages.map((page) => {
             if (page.subRoutes) {
-              return page.subRoutes.map((sub) => {
+              let baseRoute = (
+                <Route
+                  key={page.route}
+                  path={page.route}
+                  component={page.comp}
+                />
+              );
+              let subRoutes = page.subRoutes.map((sub) => {
                 let route = `${page.route}${sub.route}`;
-                return <Route key={route} path={route} component={sub.comp} />;
+                return (
+                  <Route
+                    key={route}
+                    path={route}
+                    component={sub.comp}
+                    exact={true}
+                  />
+                );
               });
+              return [...subRoutes, baseRoute];
             } else {
               return (
                 <Route

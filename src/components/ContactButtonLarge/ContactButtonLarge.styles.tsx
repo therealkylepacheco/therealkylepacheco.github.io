@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { colors } from "../../theme";
 
 export const ContactButtonInfo = styled(IconButton)`
-  color: ${colors.primary};
+  color: ${colors.secondary};
 `;
 
 export const ContactButtonContainer = styled.div`
@@ -15,5 +15,5 @@ export const ContactButtonContainer = styled.div`
 `;
 
 export const ContactButtonText = styled(Typography)`
-  color: ${colors.primary};
+  color: ${colors.secondary};
 `;

@@ -5,7 +5,7 @@ import { colors } from "../../theme";
 export const Code = styled(Typography)`
   font-family: Courier New;
   font-weight: 900;
-  color: ${colors.white};
+  color: ${colors.primary};
 `;
 
 export const CodeOutput = styled.div`

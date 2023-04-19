@@ -21,7 +21,7 @@ export const ContactButtonLarge: React.FC<ContactButtonLargeProps> = (
   return (
     <ContactButtonContainer>
       <ContactButtonInfo onClick={handleClick}>{children}</ContactButtonInfo>
-      <ContactButtonText>{title}</ContactButtonText>
+      <ContactButtonText variant="h3">{title}</ContactButtonText>
     </ContactButtonContainer>
   );
 };

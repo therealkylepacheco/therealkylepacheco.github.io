@@ -11,7 +11,7 @@ export const CodePreview = (props: CodePreviewProps) => {
   return (
     <CodeOutput>
       {lines.map((line) => (
-        <Code>{line}</Code>
+        <Code key={line}>{line}</Code>
       ))}
     </CodeOutput>
   );

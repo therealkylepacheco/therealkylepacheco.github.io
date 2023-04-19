@@ -1,24 +1,53 @@
 import React from "react";
-import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
-import ResponsiveContent from "../components/ResponsiveContent";
 import me from "../images/me.png";
+import Grid from "@material-ui/core/Grid";
+import { InfoCard } from "../components/InfoCard/InfoCard";
+import { KeyPoints } from "../components/KeyPoints/KeyPoints";
+import { WhatsNew } from "../components/WhatsNew/WhatsNew";
+import { ContentImage } from "../components/Content/Content.styles";
+import { ThemedGrid } from "../components/ThemedGrid/ThemedGrid";
 
 export const Home = () => {
   return (
-    <>
-      <PageTitle text="Kyle Pacheco" />
-      <ResponsiveContent>
-        <Content img={me} alt="Kyle Pacheco" imgPosition="left">
-          Hi! My name is Kyle Pacheco, and I'm a software developer in Boise,
-          ID. Software development is an incredibly interesting career so far.
-          Building out new products and solving complex problems while
-          collaborating with my teammates are the highlights of my day to day.
-          Both frontend and backend development interest me and I have
-          experience in both. Outside of work, you'll find me hiking, reading,
-          or working on my house.
-        </Content>
-      </ResponsiveContent>
-    </>
+    <ThemedGrid container direction="row" spacing={10}>
+      <Grid container item spacing={2}>
+        <Grid container item alignItems="center" justifyContent="center">
+          <PageTitle text="Kyle Pacheco" />
+          <ContentImage imgRounded alt="Kyle Pacheco" src={me} />
+        </Grid>
+        <Grid item xs={12}>
+          <KeyPoints
+            variant="h4"
+            points={["Software", "Frontend", "Backend", "Web Dev"]}
+          />
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        item
+        spacing={2}
+        justifyContent="space-between"
+        alignItems="center"
+        xs={12}
+      >
+        <InfoCard
+          title="Experience"
+          route="/experience"
+          xs={12}
+          sm={4}
+          hoverEffect
+        />
+        <InfoCard
+          title="Projects"
+          route="/projects"
+          xs={12}
+          sm={4}
+          hoverEffect
+        />
+        <InfoCard title="Skills" route="/skills" xs={12} sm={4} hoverEffect />
+      </Grid>
+      <WhatsNew />
+    </ThemedGrid>
   );
 };

@@ -3,8 +3,9 @@ import ButtonBase from "@material-ui/core/ButtonBase";
 import styled from "styled-components";
 import { colors } from "../../theme";
 
-export const navbarHeight = 50;
-const buttonSpacing = 15;
+const buttonSpacing = "35px";
+export const navbarRaw = 15;
+export const navbarHeight = `${navbarRaw}vh`;
 
 export const AppBarStyled = styled(AppBar)`
   background-color: ${colors.primary};
@@ -16,10 +17,14 @@ export const NavbarContainer = styled.div`
   flex-direction: row;
   flex-grow: 1;
   align-items: center;
-  margin-left: ${buttonSpacing};
 `;
 
 export const NavbarButton = styled(ButtonBase)`
   border-radius: 5px;
-  margin-right: ${buttonSpacing}px;
+  margin-right: ${buttonSpacing};
+`;
+
+export const ImageButton = styled.img`
+  height: ${navbarHeight};
+  width: ${navbarRaw * 1.2}vh;
 `;
