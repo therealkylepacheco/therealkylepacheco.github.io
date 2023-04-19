@@ -12,4 +12,6 @@ export const colors = {
   link: "#51A6FF",
 };
 
+export const MOBILE_NAV_BREAKPOINT = 1100;
+
 //6c8ab8

@@ -3,7 +3,6 @@ import Menu from "@material-ui/core/Menu";
 import styled from "styled-components";
 import { colors } from "../../theme";
 
-export const navbarHeight = 50;
 const buttonSpacing = 35;
 
 export const MenuButtonBase = styled(ButtonBase)`

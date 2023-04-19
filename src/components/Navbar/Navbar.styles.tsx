@@ -6,10 +6,12 @@ import { colors } from "../../theme";
 const buttonSpacing = "35px";
 export const navbarRaw = 15;
 export const navbarHeight = `${navbarRaw}vh`;
+export const mobileNavbarRaw = 7;
+export const mobileNavbarHeight = `${mobileNavbarRaw}vh`;
 
-export const AppBarStyled = styled(AppBar)`
+export const AppBarStyled = styled(AppBar)<{ isMobile: boolean }>`
   background-color: ${colors.primary};
-  height: ${navbarHeight};
+  height: ${(props) => (props.isMobile ? mobileNavbarHeight : navbarHeight)};
 `;
 
 export const NavbarContainer = styled.div`

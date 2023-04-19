@@ -1,24 +1,31 @@
-import { makeStyles } from "@material-ui/core";
+import { Theme, makeStyles } from "@material-ui/core";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
-import { navbarHeight, navbarRaw } from "./components/Navbar/Navbar.styles";
+import {
+  mobileNavbarHeight,
+  navbarHeight,
+  navbarRaw,
+} from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
-import { colors } from "./theme";
+import { MOBILE_NAV_BREAKPOINT, colors } from "./theme";
 
 // transparenttextures.com
 import diamond from "./images/backgrounds/diamond-upholstery.png";
+import useMobilePage from "./pages/hooks/useMobilePage";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
     minHeight: "100vh",
     backgroundColor: colors.background,
     backgroundImage: `url(${diamond})`,
   },
   content: {
-    paddingTop: navbarHeight,
-    paddingBottom: navbarHeight,
+    paddingTop: ({ isMobile }) =>
+      isMobile ? mobileNavbarHeight : navbarHeight,
+    paddingBottom: ({ isMobile }) =>
+      isMobile ? mobileNavbarHeight : navbarHeight,
     paddingLeft: `${navbarRaw}vw`,
     paddingRight: `${navbarRaw}vw`,
     display: "flex",
@@ -27,7 +34,8 @@ const useStyles = makeStyles({
 });
 
 function App() {
-  const classes = useStyles();
+  const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
+  const classes = useStyles({ isMobile });
 
   return (
     <div className={classes.app}>
