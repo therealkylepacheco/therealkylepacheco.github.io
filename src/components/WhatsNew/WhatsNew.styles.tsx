@@ -4,4 +4,5 @@ import { colors } from "../../theme";
 
 export const Title = styled(Typography)`
   color: ${colors.secondary};
+  font-weight: 1;
 `;

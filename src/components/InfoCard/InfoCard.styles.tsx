@@ -8,6 +8,7 @@ import {
 import styled from "styled-components";
 import { colors } from "../../theme";
 
+// const IMAGE_WIDTH = "100%";
 const IMAGE_WIDTH = "315px";
 const IMAGE_HEIGHT = "280px";
 
@@ -33,7 +34,8 @@ export const CardContentContainer = styled(CardContent)`
 `;
 
 export const CardImage = styled.img<{ imgRounded?: boolean; imgLink?: string }>`
-  max-width: ${IMAGE_WIDTH};
+  max-width: 100%;
+  width: ${IMAGE_WIDTH};
   max-height: ${IMAGE_HEIGHT};
   cursor: ${(props) => (props.imgLink ? "pointer" : "")};
   background-color: ${colors.secondary};

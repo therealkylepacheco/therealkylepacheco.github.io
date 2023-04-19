@@ -19,11 +19,18 @@ export const Home = () => {
         <Grid item xs={12}>
           <KeyPoints
             variant="h4"
-            points={["Software Developer", "Frontend", "Backend", "Web Dev"]}
+            points={["Software", "Frontend", "Backend", "Web Dev"]}
           />
         </Grid>
       </Grid>
-      <Grid container item spacing={2} justifyContent="space-between" xs={12}>
+      <Grid
+        container
+        item
+        spacing={2}
+        justifyContent="space-between"
+        alignItems="center"
+        xs={12}
+      >
         <InfoCard
           title="Experience"
           route="/experience"

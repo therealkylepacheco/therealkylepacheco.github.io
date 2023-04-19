@@ -7,8 +7,8 @@ import { colors } from "../../theme";
 // KDP TODO: Improve theme color naming
 
 const buttonSpacing = "35px";
-export const navbarRaw = 150;
-export const navbarHeight = `${navbarRaw}px`;
+export const navbarRaw = 15;
+export const navbarHeight = `${navbarRaw}vh`;
 
 export const AppBarStyled = styled(AppBar)`
   background-color: ${colors.primary};
@@ -29,5 +29,5 @@ export const NavbarButton = styled(ButtonBase)`
 
 export const ImageButton = styled.img`
   height: ${navbarHeight};
-  width: ${navbarRaw * 1.2}px;
+  width: ${navbarRaw * 1.2}vh;
 `;

@@ -5,6 +5,6 @@ import { navbarRaw } from "../Navbar/Navbar.styles";
 
 export const ThemedGrid = styled(Grid)`
   background-color: ${colors.background};
-  margin-top: ${navbarRaw * 0.3}px;
+  margin-top: ${navbarRaw * 0.3}vh;
   border-radius: 10px;
 `;

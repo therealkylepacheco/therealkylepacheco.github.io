@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { colors } from "../../theme";
 
-export const KeyPointsContainer = styled.div`
+export const KeyPointsContainer = styled.div<{ isMobile: boolean }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
   width: 100%;
+  align-items: ${(props) => (props.isMobile ? "center" : "")};
   justify-content: center;
   color: ${colors.secondary};
 `;

@@ -3,7 +3,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
-import { navbarHeight } from "./components/Navbar/Navbar.styles";
+import { navbarHeight, navbarRaw } from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
 import { colors } from "./theme";
 
@@ -17,7 +17,10 @@ const useStyles = makeStyles({
     backgroundImage: `url(${diamond})`,
   },
   content: {
-    padding: navbarHeight,
+    paddingTop: navbarHeight,
+    paddingBottom: navbarHeight,
+    paddingLeft: `${navbarRaw}vw`,
+    paddingRight: `${navbarRaw}vw`,
     display: "flex",
     flexDirection: "column",
   },
