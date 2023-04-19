@@ -40,8 +40,6 @@ export const InfoCard = (props: Props) => {
   const { expanded, handleExpand, handleClickImage, routeTo, bodyPadding } =
     useInfoCard(imgLink, route, keyPoints);
 
-  // KDP TODO: Add key points (bulleted list that displays before summary)
-
   return (
     <Grid item {...other}>
       <ThemedCard onClick={routeTo} route={route} hoverEffect={hoverEffect}>
