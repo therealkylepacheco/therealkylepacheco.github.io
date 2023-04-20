@@ -6,22 +6,10 @@ import { ThemedGrid } from "../../components/ThemedGrid/ThemedGrid";
 import { ThemedText } from "../../components/ThemedText/ThemedText";
 import Grid from "@material-ui/core/Grid";
 
-export const Prime = () => {
-  const title = "Prime Number Generator";
+export const ThisSite = () => {
+  const title = "This Site";
   const repoLink =
-    "https://github.com/therealkylepacheco/prime-number-generator";
-  const codeOutput = [
-    "$ java Main 1 25",
-    "2",
-    "3",
-    "5",
-    "7",
-    "11",
-    "13",
-    "17",
-    "19",
-    "23",
-  ];
+    "https://github.com/therealkylepacheco/therealkylepacheco.github.io";
 
   return (
     <ThemedGrid container spacing={5} direction="row">
@@ -46,9 +34,6 @@ export const Prime = () => {
           Here is some example output from the program. All the prime numbers
           between 1 and 25 are printed to the terminal.
         </ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <CodePreview lines={codeOutput} />
       </Grid>
       <Grid item>
         <ThemedText>
