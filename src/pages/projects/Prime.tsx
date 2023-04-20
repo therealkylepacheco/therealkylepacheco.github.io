@@ -7,6 +7,9 @@ import { ThemedText } from "../../components/ThemedText/ThemedText";
 import Grid from "@material-ui/core/Grid";
 
 export const Prime = () => {
+  const title = "Prime Number Generator";
+  const repoLink =
+    "https://github.com/therealkylepacheco/prime-number-generator";
   const codeOutput = [
     "$ java Main 1 25",
     "2",
@@ -19,13 +22,16 @@ export const Prime = () => {
     "19",
     "23",
   ];
+
   return (
     <ThemedGrid container spacing={5} direction="row">
-      <Grid item>
-        <PageTitle text="Prime Number Generator" />
-      </Grid>
-      <Grid item>
-        <RepoMessage link="https://github.com/therealkylepacheco/prime-number-generator" />
+      <Grid item container xs={12}>
+        <Grid item xs={12}>
+          <PageTitle text={title} />
+        </Grid>
+        <Grid item xs={12}>
+          <RepoMessage link={repoLink} />
+        </Grid>
       </Grid>
       <Grid item>
         <ThemedText>
