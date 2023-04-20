@@ -49,12 +49,6 @@ export const ThisSite = () => {
         </ThemedText>
       </Grid>
       <Grid item xs={12}>
-        <ThemedText>But then it stayed the same.</ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <ThemedText>For two years.</ThemedText>
-      </Grid>
-      <Grid item xs={12}>
         <ThemedText>
           Fast forward to 2023. The original version of the site was up for
           longer than I initially planned, so it was time for a revamp with
