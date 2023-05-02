@@ -14,6 +14,7 @@ import { MOBILE_NAV_BREAKPOINT, colors } from "./theme";
 // transparenttextures.com
 import diamond from "./images/backgrounds/diamond-upholstery.png";
 import useMobilePage from "./pages/hooks/useMobilePage";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -41,6 +42,7 @@ function App() {
     <div className={classes.app}>
       <Navbar options={pages} />
       <div className={classes.content}>
+        <ScrollToTop />
         <Switch>
           {pages.map((page) => {
             if (page.subRoutes) {
