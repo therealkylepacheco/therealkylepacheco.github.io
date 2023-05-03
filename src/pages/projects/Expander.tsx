@@ -4,24 +4,11 @@ import RepoMessage from "../../components/RepoMessage";
 import { ThemedGrid } from "../../components/ThemedGrid/ThemedGrid";
 import { ThemedText } from "../../components/ThemedText/ThemedText";
 import Grid from "@material-ui/core/Grid";
+import { ItchWidget } from "../../components/ItchWidget/ItchWidget";
 
 export const Expander = () => {
   const title = "Expander";
   const repoLink = "https://github.com/therealkylepacheco/Expander";
-
-  const itchWidget = (
-    <iframe
-      title="expander_itch"
-      frameBorder="0"
-      src="https://itch.io/embed/2049410?bg_color=000000&amp;fg_color=ffffff&amp;border_color=000000"
-      width="552"
-      height="167"
-    >
-      <a href="https://therealkylepacheco.itch.io/expander">
-        Expander by therealkylepacheco
-      </a>
-    </iframe>
-  );
 
   return (
     <ThemedGrid container spacing={5} direction="row">
@@ -33,7 +20,10 @@ export const Expander = () => {
           <RepoMessage link={repoLink} />
         </Grid>
         <Grid item xs={12}>
-          {itchWidget}
+          <ItchWidget
+            title="Expander"
+            src="https://itch.io/embed/2049410?bg_color=000000&amp;fg_color=ffffff&amp;border_color=000000"
+          />
         </Grid>
       </Grid>
       <Grid item xs={12}>
