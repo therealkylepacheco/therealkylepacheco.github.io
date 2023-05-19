@@ -28,36 +28,40 @@ export const ProjectSpaceShooter = () => {
       </Grid>
       <Grid item xs={12}>
         <ThemedText>
-          Expander is my first solo developed game. Prior to this, all my
-          exposure to game development has been through Udemy courses and other
-          tutorials.
+          Project Space Shooter (PSS) is my second game. I made this game
+          entirely in Unity and with object primitives.
         </ThemedText>
       </Grid>
       <Grid item xs={12}>
         <ThemedText>
-          I wanted to make a simple experience for my first game, so I set out
-          to make something with one button controls that is easy to understand
-          conceptually. The result was Expander. Expander is a simple game,
-          where the point is to dodge the incoming walls for as long as possible
-          using the spacebar to expand the ever contracting orbs.
+          PSS is an endless, arcade space shooter. Progressively harder waves of
+          enemies spawn the longer the player survives. For the first four
+          waves, new enemy types are introduced. These include a basic meteor
+          (spawns at a random position and moves across the screen), chaser
+          (follows the player), shooter (will continuously fire on the player),
+          and harasser (wait underneath player, fire, repeat). Each enemy is
+          introduced over the course of four waves. Once every enemy type has
+          been introduced, they begin to spawn faster and faster with each
+          subsequent wave.
         </ThemedText>
       </Grid>
       <Grid item xs={12}>
         <ThemedText>
-          I made Expander in unity and entirely with object primitives. The most
-          challenging part of this project was calculating where to spawn the
-          walls so that there would always be a fixed distance between them.
-          This involved making copies of the primitive, calculating what scale
-          they should have, and determining where to place them on the x-axis.
+          Compared to my previous game Expander, PSS is much more complex. There
+          is more assets, gameplay, and logic to take into account. Each enemy
+          has its own behavior to take into account, there is a health system
+          for the player, the game is pausable, and there is a scoring system in
+          place.
         </ThemedText>
       </Grid>
       <Grid item xs={12}>
         <ThemedText>
-          While Expander is a simple game, it does gradually get more difficult.
-          Every three walls the player passes through, the gaps between walls
-          gets smaller and smaller until there is barely enough clearance to
-          pass. Check out the game on itch, and see how far you can get!
+          I learned a lot while making PSS, and I am looking forward to applying
+          this to a future project.
         </ThemedText>
+      </Grid>
+      <Grid item xs={12}>
+        <ThemedText>Check out the game on itch.io!</ThemedText>
       </Grid>
     </ThemedGrid>
   );
