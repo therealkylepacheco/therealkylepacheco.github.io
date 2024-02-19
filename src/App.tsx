@@ -1,5 +1,15 @@
-import { Theme, makeStyles } from "@material-ui/core";
-import React from "react";
+import {
+  CssBaseline,
+  Fade,
+  Grid,
+  Paper,
+  Theme,
+  ThemeProvider,
+  Typography,
+  createTheme,
+  makeStyles,
+} from "@material-ui/core";
+import React, { useCallback, useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
@@ -9,18 +19,22 @@ import {
   navbarRaw,
 } from "./components/Navbar/Navbar.styles";
 import pages from "./pages/index";
-import { MOBILE_NAV_BREAKPOINT, colors } from "./theme";
+import { MOBILE_NAV_BREAKPOINT, colors, themeOptions } from "./theme";
 
 // transparenttextures.com
 import diamond from "./images/backgrounds/diamond-upholstery.png";
 import useMobilePage from "./pages/hooks/useMobilePage";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import { TypeName } from "./pages/TypeName";
+import { useDelay, useTypeEffect } from "./hooks";
+import { TypingTypography } from "./components/TypingTypography";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
+    maxHeight: "100vh",
     minHeight: "100vh",
     backgroundColor: colors.background,
-    backgroundImage: `url(${diamond})`,
+    // backgroundImage: `url(${diamond})`,
   },
   content: {
     paddingTop: ({ isMobile }) =>
@@ -38,11 +52,34 @@ function App() {
   const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
   const classes = useStyles({ isMobile });
 
+  const theme = createTheme(themeOptions);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Grid
+        container
+        item
+        xs={12}
+        style={{ height: "100vh" }}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <TypingTypography
+          initialDelay={5000}
+          text="Kyle Pacheco"
+          typeSpeed={175}
+          variant="h1"
+        />
+      </Grid>
+    </ThemeProvider>
+  );
+
   return (
     <div className={classes.app}>
-      <Navbar options={pages} />
+      {/* <Navbar options={pages} /> */}
       <div className={classes.content}>
-        <ScrollToTop />
+        {/* <ScrollToTop />
         <Switch>
           {pages.map((page) => {
             if (page.subRoutes) {
@@ -76,7 +113,7 @@ function App() {
               );
             }
           })}
-        </Switch>
+        </Switch> */}
       </div>
       <Footer />
     </div>

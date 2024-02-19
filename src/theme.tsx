@@ -1,3 +1,5 @@
+import { ThemeOptions } from "@material-ui/core/styles/createTheme";
+
 export const colors = {
   // primary: "#1D3557",
   primary: "#1D3557",
@@ -15,3 +17,26 @@ export const colors = {
 export const MOBILE_NAV_BREAKPOINT = 1100;
 
 //6c8ab8
+
+export const themeOptions: ThemeOptions = {
+  palette: {
+    // primary: {
+    //   main: '#3f51b5',
+    // },
+    // secondary: {
+    //   main: '#f50057',
+    // },
+    background: {
+      default: "#1d3557", // dark blue
+      paper: "#334b6f", // light blue
+    },
+    text: {
+      primary: "#ffffff", // white
+    },
+  },
+  typography: {
+    h1: {
+      fontFamily: "Times New Roman",
+    },
+  },
+};

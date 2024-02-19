@@ -33,9 +33,6 @@ const useTypeName = () => {
     }
   }, [delay]);
 
-  /**
-   * Kickoff when flag changes
-   */
   useEffect(() => {
     void handleTypeAnimation();
   }, [handleTypeAnimation]);
@@ -43,50 +40,11 @@ const useTypeName = () => {
   return letters;
 };
 
-export const Home = () => {
+export const TypeName = () => {
   const letters = useTypeName();
   return (
-    <ThemedGrid container>
-      <Grid item xs={12}>
-        KYLE PACHECO
-      </Grid>
-      {/* <Grid container item spacing={2}>
-        <Grid container item alignItems="center" justifyContent="center">
-          <PageTitle text="Kyle Pacheco" />
-          <ContentImage imgRounded alt="Kyle Pacheco" src={me} />
-        </Grid>
-        <Grid item xs={12}>
-          <KeyPoints
-            variant="h4"
-            points={["Software", "Frontend", "Backend", "Web Dev"]}
-          />
-        </Grid>
-      </Grid>
-      <Grid
-        container
-        item
-        spacing={2}
-        justifyContent="space-between"
-        alignItems="center"
-        xs={12}
-      >
-        <InfoCard
-          title="Experience"
-          route="/experience"
-          xs={12}
-          sm={4}
-          hoverEffect
-        />
-        <InfoCard
-          title="Projects"
-          route="/projects"
-          xs={12}
-          sm={4}
-          hoverEffect
-        />
-        <InfoCard title="Skills" route="/skills" xs={12} sm={4} hoverEffect />
-      </Grid>
-      <WhatsNew /> */}
-    </ThemedGrid>
+    <Grid item xs={12}>
+      {letters}
+    </Grid>
   );
 };
