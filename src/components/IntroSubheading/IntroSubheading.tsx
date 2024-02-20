@@ -3,11 +3,12 @@ import React from "react";
 import { useIntroSubheading } from "./useIntroSubheading";
 
 type Props = {
+  handleHide: () => void;
   startAnimation: boolean;
 };
 
-export const IntroSubheading = ({ startAnimation }: Props) => {
-  const { inCount, subs } = useIntroSubheading(startAnimation);
+export const IntroSubheading = ({ handleHide, startAnimation }: Props) => {
+  const { inCount, subs } = useIntroSubheading({ handleHide, startAnimation });
 
   return (
     <Grid container item xs={12}>

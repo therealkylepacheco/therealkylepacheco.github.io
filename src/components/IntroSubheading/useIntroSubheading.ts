@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDelay } from "../../hooks";
 
-export const useIntroSubheading = (startAnimation: boolean) => {
+type Args = {
+  handleHide: () => void;
+  startAnimation: boolean;
+};
+
+export const useIntroSubheading = ({ handleHide, startAnimation }: Args) => {
   const delay = useDelay();
 
   const [inCount, setInCount] = useState(0);
@@ -16,7 +21,9 @@ export const useIntroSubheading = (startAnimation: boolean) => {
       setInCount(i);
       await delay(500);
     }
-  }, [delay, subs]);
+    await delay(750);
+    handleHide();
+  }, [delay, handleHide, subs]);
 
   useEffect(() => {
     if (startAnimation) {
