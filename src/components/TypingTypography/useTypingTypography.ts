@@ -1,13 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useDelay, useTypeEffect } from "../../hooks";
 import { TypingConfig } from "./types";
 
-export const useTypingTypography = (config: TypingConfig) => {
+export const useTypingTypography = ({
+  handleDone: configHandleDone,
+  ...config
+}: TypingConfig) => {
   const delay = useDelay();
 
   const [cursorVisible, setCursorVisible] = useState(true);
 
-  const handleDone = useCallback(() => setCursorVisible(false), []);
+  const handleDone = useCallback(() => {
+    if (configHandleDone) {
+      configHandleDone();
+    }
+    setCursorVisible(false);
+  }, [configHandleDone]);
 
   const typingText = useTypeEffect({ ...config, handleDone });
 

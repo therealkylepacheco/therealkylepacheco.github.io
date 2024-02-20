@@ -10,19 +10,21 @@ interface Props extends TypingConfig {
 }
 
 export const TypingTypography = ({
+  handleDone,
   initialDelay,
   text,
   typeSpeed,
   variant,
 }: Props) => {
   const { cursorVisible, typingText } = useTypingTypography({
+    handleDone,
     initialDelay,
     text,
     typeSpeed,
   });
 
   return (
-    <Typography variant={variant}>
+    <Typography style={{ textAlign: "center" }} variant={variant}>
       {typingText}
       <Fade in={cursorVisible}>
         <Cursor />

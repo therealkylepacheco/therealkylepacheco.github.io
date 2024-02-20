@@ -1,4 +1,5 @@
 import {
+  Box,
   CssBaseline,
   Fade,
   Grid,
@@ -28,6 +29,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { TypeName } from "./pages/TypeName";
 import { useDelay, useTypeEffect } from "./hooks";
 import { TypingTypography } from "./components/TypingTypography";
+import { IntroAnimation } from "./pages/IntroAnimation";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -57,21 +59,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Grid
-        container
-        item
-        xs={12}
-        style={{ height: "100vh" }}
-        alignItems="center"
-        justifyContent="center"
-      >
-        <TypingTypography
-          initialDelay={5000}
-          text="Kyle Pacheco"
-          typeSpeed={175}
-          variant="h1"
-        />
-      </Grid>
+      <IntroAnimation />
     </ThemeProvider>
   );
 

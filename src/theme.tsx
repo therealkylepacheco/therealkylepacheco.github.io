@@ -38,5 +38,8 @@ export const themeOptions: ThemeOptions = {
     h1: {
       fontFamily: "Times New Roman",
     },
+    h2: {
+      fontFamily: "Times New Roman",
+    },
   },
 };

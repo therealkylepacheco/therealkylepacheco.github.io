@@ -35,7 +35,6 @@ export const useTypeEffect = ({
   }, [delay, handleDone, text, typeSpeed]);
 
   useEffect(() => {
-    console.log("kdp useEffect");
     void handleTypeAnimation();
   }, [handleTypeAnimation]);
 
