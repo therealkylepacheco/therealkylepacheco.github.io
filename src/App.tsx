@@ -33,6 +33,7 @@ import { TypingTypography } from "./components/TypingTypography";
 import { IntroAnimation } from "./pages/IntroAnimation";
 import myPhoto from "./images/myself.jpg";
 import { GitHub, LinkedIn } from "@material-ui/icons";
+import { Intro } from "./pages/Intro";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -81,49 +82,9 @@ function App() {
         style={{ height: "100vh", overflow: enableScroll ? "auto" : "hidden" }}
       >
         <IntroAnimation handleAnimationEnd={handleAnimationEnd} />
-        <Fade in={showContent} timeout={500} addEndListener={endListener}>
+        <Fade in={showContent} timeout={1000} addEndListener={endListener}>
           <Box display="flex" flexDirection="column">
-            <Grid container alignItems="center">
-              <Grid item xs={6}>
-                <img
-                  alt="Kyle Pacheco"
-                  src={myPhoto}
-                  style={{ width: "100%" }}
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <Grid container direction="column" justifyContent="center">
-                  <Grid item>
-                    <Typography style={{ textAlign: "center" }} variant="h1">
-                      Kyle Pacheco
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Typography
-                      color="secondary"
-                      style={{ textAlign: "center" }}
-                      variant="h2"
-                    >
-                      Software Developer
-                    </Typography>
-                  </Grid>
-                  <Grid item>
-                    <Box
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="space-evenly"
-                    >
-                      <IconButton size="medium" color="secondary">
-                        <LinkedIn style={{ fontSize: 100 }} />
-                      </IconButton>
-                      <IconButton size="medium" color="secondary">
-                        <GitHub style={{ fontSize: 100 }} />
-                      </IconButton>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
+            <Intro />
           </Box>
         </Fade>
       </Box>

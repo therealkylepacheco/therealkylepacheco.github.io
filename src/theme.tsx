@@ -36,7 +36,7 @@ export const themeOptions: ThemeOptions = {
       // default: "#1d3557", // dark blue
       // paper: "#334b6f", // light blue
       default: "#210002",
-      paper: "#334b6f", // light blue
+      paper: "#a34300",
     },
     text: {
       // primary: "#ffffff", // white
