@@ -3,14 +3,26 @@ import React, { useCallback, useState } from "react";
 import { TypingTypography } from "../components/TypingTypography";
 import { IntroSubheading } from "../components/IntroSubheading";
 
-export const IntroAnimation = () => {
+type Props = {
+  handleAnimationEnd: () => void;
+};
+
+export const IntroAnimation = ({ handleAnimationEnd }: Props) => {
   const [startAnimation, setStartAnimation] = useState(false);
   const [visible, setVisible] = useState(true);
   const handleDone = useCallback(() => setStartAnimation(true), []);
   const handleHide = useCallback(() => setVisible(false), []);
+  const endListener = useCallback(
+    ({ style: { opacity } }: HTMLElement) => {
+      if (opacity === "0") {
+        handleAnimationEnd();
+      }
+    },
+    [handleAnimationEnd]
+  );
 
   return (
-    <Fade in={visible} unmountOnExit>
+    <Fade in={visible} unmountOnExit addEndListener={endListener}>
       <Box
         display="flex"
         style={{ width: "100vw", height: "100vh" }}

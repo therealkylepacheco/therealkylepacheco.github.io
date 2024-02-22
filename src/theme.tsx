@@ -26,12 +26,21 @@ export const themeOptions: ThemeOptions = {
     // secondary: {
     //   main: '#f50057',
     // },
+    primary: {
+      main: "#ffaf00",
+    },
+    secondary: {
+      main: "#973700",
+    },
     background: {
-      default: "#1d3557", // dark blue
+      // default: "#1d3557", // dark blue
+      // paper: "#334b6f", // light blue
+      default: "#210002",
       paper: "#334b6f", // light blue
     },
     text: {
-      primary: "#ffffff", // white
+      // primary: "#ffffff", // white
+      primary: "#ffaf00",
     },
   },
   typography: {
