@@ -5,7 +5,9 @@ import {
   CssBaseline,
   Fade,
   Grid,
+  GridSize,
   IconButton,
+  LinearProgress,
   Paper,
   Theme,
   ThemeProvider,
@@ -95,6 +97,36 @@ function App() {
             <Intro />
             <Navigation />
             <About />
+            <Grid container id="skills">
+              <Grid item xs={12}>
+                <Typography variant="h1">Skills</Typography>
+              </Grid>
+              <Grid container item xs={12} alignItems="center">
+                <Grid item xs={4}>
+                  <Typography variant="h3">React</Typography>
+                </Grid>
+                <Grid
+                  container
+                  item
+                  xs={4}
+                  style={{
+                    backgroundColor: "#973700",
+                    borderRadius: "50px",
+                    overflow: "hidden",
+                    height: "10px",
+                  }}
+                >
+                  <Grid
+                    item
+                    xs={Math.floor(12 * 0.32) as GridSize}
+                    style={{ backgroundColor: "#ffaf00" }}
+                  />
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography variant="h3">Senior Level</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
             <About /> <About /> <About /> <About /> <About /> <About />{" "}
             <About /> <About /> <About /> <About /> <About /> <About />{" "}
             <About /> <About /> <About /> <About />

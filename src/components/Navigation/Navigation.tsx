@@ -1,7 +1,9 @@
-import { Grid } from "@material-ui/core";
+import { AppBar, Grid } from "@material-ui/core";
 import { NavButton } from "./NavButton";
 
 export const Navigation = () => {
+  // KDP TODO: Need mobile variant (dropdown / app bar)
+
   return (
     <Grid
       container
@@ -16,7 +18,7 @@ export const Navigation = () => {
         <NavButton href="#about" text="About" />
       </Grid>
       <Grid item sm={12} md={2}>
-        <NavButton href="#" text="Skills" />
+        <NavButton href="#skills" text="Skills" />
       </Grid>
       <Grid item sm={12} md={3}>
         <NavButton href="#experience" text="Experience" />
