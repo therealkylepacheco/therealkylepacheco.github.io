@@ -1,5 +1,7 @@
 import {
+  AppBar,
   Box,
+  Button,
   CssBaseline,
   Fade,
   Grid,
@@ -34,6 +36,8 @@ import { IntroAnimation } from "./pages/IntroAnimation";
 import myPhoto from "./images/myself.jpg";
 import { GitHub, LinkedIn } from "@material-ui/icons";
 import { Intro } from "./pages/Intro";
+import { About } from "./pages/About";
+import { Navigation } from "./components/Navigation";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -60,10 +64,10 @@ function App() {
 
   const theme = createTheme(themeOptions);
 
-  // const [showContent, setShowContent] = useState(true);
-  // const [enableScroll, setEnableScroll] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-  const [enableScroll, setEnableScroll] = useState(false);
+  const [showContent, setShowContent] = useState(true);
+  const [enableScroll, setEnableScroll] = useState(true);
+  // const [showContent, setShowContent] = useState(false);
+  // const [enableScroll, setEnableScroll] = useState(false);
   const handleAnimationEnd = useCallback(() => setShowContent(true), []);
 
   const endListener = useCallback(
@@ -79,12 +83,21 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box
-        style={{ height: "100vh", overflow: enableScroll ? "auto" : "hidden" }}
+        style={{
+          height: "100vh",
+          overflow: enableScroll ? "auto" : "hidden",
+          scrollbarColor: "#973700 transparent",
+        }}
       >
-        <IntroAnimation handleAnimationEnd={handleAnimationEnd} />
+        {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
         <Fade in={showContent} timeout={1000} addEndListener={endListener}>
-          <Box display="flex" flexDirection="column">
+          <Box display="flex" flexDirection="column" padding="16px">
             <Intro />
+            <Navigation />
+            <About />
+            <About /> <About /> <About /> <About /> <About /> <About />{" "}
+            <About /> <About /> <About /> <About /> <About /> <About />{" "}
+            <About /> <About /> <About /> <About />
           </Box>
         </Fade>
       </Box>

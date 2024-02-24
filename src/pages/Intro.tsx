@@ -8,11 +8,15 @@ import { GITHUB_URL, LINKEDIN_URL } from "../constants";
 
 export const Intro = () => {
   return (
-    <Grid container alignItems="center">
-      <Grid item xs={6}>
-        <img alt="Kyle Pacheco" src={myPhoto} style={{ width: "100%" }} />
+    <Grid id="about" container alignItems="center">
+      <Grid item sm={12} md={6} xl={5}>
+        <img
+          alt="Kyle Pacheco"
+          src={myPhoto}
+          style={{ borderRadius: "10px", width: "100%" }}
+        />
       </Grid>
-      <Grid item xs={6}>
+      <Grid item sm={12} md={6} xl={7}>
         <Grid container direction="column" justifyContent="center">
           <Grid item>
             <Typography style={{ textAlign: "center" }} variant="h1">
@@ -29,16 +33,12 @@ export const Intro = () => {
             </Typography>
           </Grid>
           <Grid item>
-            <Box
-              display="flex"
-              alignItems="center"
-              justifyContent="space-evenly"
-            >
+            <Box display="flex" alignItems="center" justifyContent="center">
               <ContactButtonUpdated url={LINKEDIN_URL}>
-                <LinkedIn style={{ fontSize: 100 }} />
+                <LinkedIn style={{ fontSize: 75 }} />
               </ContactButtonUpdated>
               <ContactButtonUpdated url={GITHUB_URL}>
-                <GitHub style={{ fontSize: 100 }} />
+                <GitHub style={{ fontSize: 75 }} />
               </ContactButtonUpdated>
             </Box>
           </Grid>

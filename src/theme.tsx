@@ -36,7 +36,8 @@ export const themeOptions: ThemeOptions = {
       // default: "#1d3557", // dark blue
       // paper: "#334b6f", // light blue
       default: "#210002",
-      paper: "#a34300",
+      // paper: "#a34300",
+      paper: "#5c1715",
     },
     text: {
       // primary: "#ffffff", // white
@@ -44,11 +45,6 @@ export const themeOptions: ThemeOptions = {
     },
   },
   typography: {
-    h1: {
-      fontFamily: "Times New Roman",
-    },
-    h2: {
-      fontFamily: "Times New Roman",
-    },
+    fontFamily: "Times New Roman",
   },
 };
