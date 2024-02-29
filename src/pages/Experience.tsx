@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import ittLogo from "../images/inTimeTec.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
@@ -7,13 +7,109 @@ import PageTitle from "../components/PageTitle";
 import { InfoCard } from "../components/InfoCard/InfoCard";
 import Grid from "@material-ui/core/Grid";
 import { PagePadding } from "../components/PagePadding/PagePadding";
-import { Typography } from "@material-ui/core";
+import {
+  Box,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@material-ui/core";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 export const Experience = () => {
+  const link = "https://www.plextrac.com";
+
+  const handleClickImage = useCallback(
+    () => (link ? window.open(link, "_blank") : {}),
+    [link]
+  );
+
   return (
-    <Grid style={PagePadding} container id="experience">
+    <Grid style={PagePadding} container id="experience" spacing={4}>
       <Grid item xs={12}>
         <Typography variant="h1">Experience</Typography>
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Card>
+          <CardContent>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              flexDirection="column"
+            >
+              <img
+                alt="PlexTrac"
+                onClick={handleClickImage}
+                src={plextracLogo}
+                style={{
+                  borderRadius: "10px",
+                  width: "75%",
+                  maxWidth: "470px",
+                  backgroundColor: "#ffaf00",
+                  padding: "8px",
+                }}
+              />
+              <Typography variant="h4">
+                Senior Software Engineer (2023-Present),
+              </Typography>
+              <Typography variant="h4">
+                Software Engineer (2022-2023)
+              </Typography>
+              <CardActions disableSpacing>
+                {/* <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        > */}
+                <ExpandMoreIcon />
+                {/* </ExpandMore> */}
+              </CardActions>
+            </Box>
+          </CardContent>
+        </Card>
+      </Grid>
+
+      <Grid item xs={12} sm={6}>
+        <Card>
+          <CardContent>
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              flexDirection="column"
+            >
+              <img
+                alt="PlexTrac"
+                onClick={handleClickImage}
+                src={plextracLogo}
+                style={{
+                  borderRadius: "10px",
+                  width: "100%",
+                  backgroundColor: "#ffaf00",
+                  padding: "8px",
+                }}
+              />
+              <Typography variant="h4">
+                Senior Software Engineer (2023-Present),
+              </Typography>
+              <Typography variant="h4">
+                Software Engineer (2022-2023)
+              </Typography>
+              <CardActions disableSpacing>
+                {/* <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        > */}
+                <ExpandMoreIcon />
+                {/* </ExpandMore> */}
+              </CardActions>
+            </Box>
+          </CardContent>
+        </Card>
       </Grid>
     </Grid>
   );

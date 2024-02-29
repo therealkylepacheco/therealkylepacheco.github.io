@@ -11,7 +11,7 @@ export const About = () => {
     <Grid container>
       <Typography variant="h1">About</Typography>
       <Paper>
-        <Typography>
+        <Typography variant="h4">
           Hi! My name is Kyle Pacheco, and I'm a software developer in Boise,
           ID. Software development is an incredibly interesting career so far.
           Building out new products and solving complex problems while

@@ -95,10 +95,10 @@ function App() {
       >
         {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
         <Fade in={showContent} timeout={1000} addEndListener={endListener}>
-          <Box display="flex" flexDirection="column" padding="16px">
+          <Box display="flex" flexDirection="column" padding="32px">
             <Intro />
             <Navigation />
-            <About />
+            {/* <About /> */}
             <Skills />
             <Experience />
             <About /> <About /> <About /> <About /> <About /> <About />
