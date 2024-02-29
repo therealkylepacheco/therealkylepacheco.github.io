@@ -6,8 +6,18 @@ import plextracLogo from "../images/plextrac.png";
 import PageTitle from "../components/PageTitle";
 import { InfoCard } from "../components/InfoCard/InfoCard";
 import Grid from "@material-ui/core/Grid";
+import { PagePadding } from "../components/PagePadding/PagePadding";
+import { Typography } from "@material-ui/core";
 
 export const Experience = () => {
+  return (
+    <Grid style={PagePadding} container id="experience">
+      <Grid item xs={12}>
+        <Typography variant="h1">Experience</Typography>
+      </Grid>
+    </Grid>
+  );
+
   return (
     <>
       <PageTitle text="Experience" />

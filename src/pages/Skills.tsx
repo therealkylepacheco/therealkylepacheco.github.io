@@ -16,8 +16,31 @@ import reduxLogo from "../images/redux.png";
 import typescriptLogo from "../images/typescript.png";
 import SkillContent from "../components/SkillContent";
 import PageTitle from "../components/PageTitle";
+import { Typography } from "@material-ui/core";
+import { ExperienceBar } from "../components/ExperienceBar";
+import { PagePadding } from "../components/PagePadding/PagePadding";
 
 export const Skills = () => {
+  return (
+    <Grid style={PagePadding} container id="skills">
+      <Grid item xs={12}>
+        <Typography variant="h1">Skills</Typography>
+      </Grid>
+      <ExperienceBar level="Senior" skill="React" value={85} />
+      <ExperienceBar level="Senior" skill="Typescript" value={85} />
+      <ExperienceBar level="Senior" skill="Node" value={85} />
+      <ExperienceBar level="Senior" skill="Redux" value={85} />
+      <ExperienceBar level="Senior" skill="AntD" value={85} />
+      <ExperienceBar level="Senior" skill="MUI" value={85} />
+      <ExperienceBar level="Moderate" skill="Postgres" value={65} />
+      <ExperienceBar level="Moderate" skill="PHP" value={50} />
+      <ExperienceBar level="Moderate" skill="Go" value={50} />
+      <ExperienceBar level="Education" skill="C++" value={25} />
+      <ExperienceBar level="Education" skill="C" value={25} />
+      <ExperienceBar level="Education" skill="Java" value={15} />
+    </Grid>
+  );
+
   return (
     <>
       <PageTitle text="Skills" />

@@ -40,6 +40,8 @@ import { GitHub, LinkedIn } from "@material-ui/icons";
 import { Intro } from "./pages/Intro";
 import { About } from "./pages/About";
 import { Navigation } from "./components/Navigation";
+import { Skills } from "./pages/Skills";
+import { Experience } from "./pages/Experience";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -97,38 +99,9 @@ function App() {
             <Intro />
             <Navigation />
             <About />
-            <Grid container id="skills">
-              <Grid item xs={12}>
-                <Typography variant="h1">Skills</Typography>
-              </Grid>
-              <Grid container item xs={12} alignItems="center">
-                <Grid item xs={4}>
-                  <Typography variant="h3">React</Typography>
-                </Grid>
-                <Grid
-                  container
-                  item
-                  xs={4}
-                  style={{
-                    backgroundColor: "#973700",
-                    borderRadius: "50px",
-                    overflow: "hidden",
-                    height: "10px",
-                  }}
-                >
-                  <Grid
-                    item
-                    xs={Math.floor(12 * 0.32) as GridSize}
-                    style={{ backgroundColor: "#ffaf00" }}
-                  />
-                </Grid>
-                <Grid item xs={4}>
-                  <Typography variant="h3">Senior Level</Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-            <About /> <About /> <About /> <About /> <About /> <About />{" "}
-            <About /> <About /> <About /> <About /> <About /> <About />{" "}
+            <Skills />
+            <Experience />
+            <About /> <About /> <About /> <About /> <About /> <About />
             <About /> <About /> <About /> <About />
           </Box>
         </Fade>
