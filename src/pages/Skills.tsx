@@ -40,7 +40,7 @@ export const Skills = () => {
             <Typography variant="h4">
               I enjoy working on the frontend. Implementing designs through
               responsive, reusable components is a fun challenge, and I like
-              having a visible impact on the user experinece. Often times, I'm
+              having a visible impact on the user experience. Often times, I'm
               in charge of implementing the frontend portion of projects.
             </Typography>
           </CardContent>

@@ -1,20 +1,23 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import ittLogo from "../images/inTimeTec.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
 import plextracLogo from "../images/plextrac.png";
 import PageTitle from "../components/PageTitle";
 import { InfoCard } from "../components/InfoCard/InfoCard";
-import Grid from "@material-ui/core/Grid";
+import Grid, { GridSize } from "@material-ui/core/Grid";
 import { PagePadding } from "../components/PagePadding/PagePadding";
 import {
   Box,
   Card,
   CardActions,
   CardContent,
+  Collapse,
   Typography,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { ExpandIconButton } from "../components/InfoCard/InfoCard.styles";
+import { ExpandableCard } from "../components/ExpandableCard/ExpandableCard";
 
 export const Experience = () => {
   const link = "https://www.plextrac.com";
@@ -24,12 +27,56 @@ export const Experience = () => {
     [link]
   );
 
+  const [expanded, setExpanded] = useState(false);
+  const [gridSize, setGridSize] = useState<GridSize>(6);
+  const handleExpand = useCallback(() => {
+    if (!expanded) {
+      // opening
+      setExpanded(true);
+      setGridSize(12);
+    } else {
+      // closing
+      setExpanded(false);
+      setGridSize(6);
+    }
+  }, [expanded]);
+
+  /**
+   *     style={{transition: theme.transitions.create("all", {
+          easing: theme.transitions.easing.sharp, 
+          duration: theme.transitions.duration.leavingScreen,
+  })}}
+   */
+
   return (
     <Grid style={PagePadding} container id="experience" spacing={4}>
       <Grid item xs={12}>
         <Typography variant="h1">Experience</Typography>
       </Grid>
-      <Grid item xs={12} sm={6}>
+
+      <ExpandableCard
+        image={plextracLogo}
+        imageAlt="PlexTrac"
+        link="https://www.plextrac.com"
+        time="2022-Present"
+      >
+        <Typography variant="h4">
+          Senior Software Engineer II (2024-Present),
+        </Typography>
+        <Typography variant="h4">
+          Senior Software Engineer (2023-2024),
+        </Typography>
+        <Typography variant="h4">Software Engineer (2022-2023)</Typography>
+      </ExpandableCard>
+
+      <Grid
+        item
+        xs={12}
+        sm={gridSize}
+        style={{
+          transition: "all .5s ease-in-out",
+        }}
+      >
         <Card>
           <CardContent>
             <Box
@@ -50,12 +97,16 @@ export const Experience = () => {
                   padding: "8px",
                 }}
               />
+              <Typography variant="h4">2022-Present</Typography>
+              {/* <Typography variant="h4">
+                Senior Software Engineer II (2024-Present),
+              </Typography>
               <Typography variant="h4">
-                Senior Software Engineer (2023-Present),
+                Senior Software Engineer (2023-2024),
               </Typography>
               <Typography variant="h4">
                 Software Engineer (2022-2023)
-              </Typography>
+              </Typography> */}
               <CardActions disableSpacing>
                 {/* <ExpandMore
           expand={expanded}
@@ -63,15 +114,27 @@ export const Experience = () => {
           aria-expanded={expanded}
           aria-label="show more"
         > */}
-                <ExpandMoreIcon />
+                <ExpandIconButton onClick={handleExpand}>
+                  <ExpandMoreIcon />
+                </ExpandIconButton>
                 {/* </ExpandMore> */}
               </CardActions>
+              <Collapse in={expanded} unmountOnExit>
+                BODY
+              </Collapse>
             </Box>
           </CardContent>
         </Card>
       </Grid>
 
-      <Grid item xs={12} sm={6}>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        style={{
+          transition: "all .5s ease-in-out",
+        }}
+      >
         <Card>
           <CardContent>
             <Box
@@ -86,17 +149,22 @@ export const Experience = () => {
                 src={plextracLogo}
                 style={{
                   borderRadius: "10px",
-                  width: "100%",
+                  width: "75%",
+                  maxWidth: "470px",
                   backgroundColor: "#ffaf00",
                   padding: "8px",
                 }}
               />
+              <Typography variant="h4">2022-Present</Typography>
+              {/* <Typography variant="h4">
+                Senior Software Engineer II (2024-Present),
+              </Typography>
               <Typography variant="h4">
-                Senior Software Engineer (2023-Present),
+                Senior Software Engineer (2023-2024),
               </Typography>
               <Typography variant="h4">
                 Software Engineer (2022-2023)
-              </Typography>
+              </Typography> */}
               <CardActions disableSpacing>
                 {/* <ExpandMore
           expand={expanded}
@@ -104,9 +172,14 @@ export const Experience = () => {
           aria-expanded={expanded}
           aria-label="show more"
         > */}
-                <ExpandMoreIcon />
+                <ExpandIconButton onClick={handleExpand}>
+                  <ExpandMoreIcon />
+                </ExpandIconButton>
                 {/* </ExpandMore> */}
               </CardActions>
+              <Collapse in={false} unmountOnExit>
+                BODY
+              </Collapse>
             </Box>
           </CardContent>
         </Card>
