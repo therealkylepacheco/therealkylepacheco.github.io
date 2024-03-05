@@ -18,11 +18,11 @@ export const Navigation = () => {
       <Grid item sm={12} md={2}>
         <NavButton href="#about" text="About" />
       </Grid>
-      <Grid item sm={12} md={2}>
-        <NavButton href="#skills" text="Skills" />
-      </Grid>
       <Grid item sm={12} md={3}>
         <NavButton href="#experience" text="Experience" />
+      </Grid>
+      <Grid item sm={12} md={2}>
+        <NavButton href="#skills" text="Skills" />
       </Grid>
       <Grid item sm={12} md={2}>
         <NavButton href="#projects" text="Projects" />

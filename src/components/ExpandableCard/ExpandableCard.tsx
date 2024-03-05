@@ -25,7 +25,7 @@ import {
 
 export type Props = {
   children: React.ReactNode;
-  time: string;
+  time?: string;
   title: string;
 };
 
@@ -39,7 +39,7 @@ export const ExpandableCard = ({ children, time, title }: Props) => {
       item
       xs={12}
       sm={gridSize}
-      style={{ height: "100%" }}
+      style={{ overflow: "auto" }}
     >
       <Card>
         <CardContent>
@@ -50,7 +50,7 @@ export const ExpandableCard = ({ children, time, title }: Props) => {
             flexDirection="column"
           >
             <Typography variant="h2">{title}</Typography>
-            <Typography variant="h3">{time}</Typography>
+            {time && <Typography variant="h3">{time}</Typography>}
             <CardActions disableSpacing>
               <ExpandIconButton expanded={expanded} onClick={handleExpand}>
                 <ExpandMoreIcon />

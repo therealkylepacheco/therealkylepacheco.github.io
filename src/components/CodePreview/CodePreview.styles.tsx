@@ -14,6 +14,8 @@ export const CodeOutput = styled.div`
   background-color: ${colors.secondary};
   border-radius: 5px;
   padding-left: 25px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   max-width: 500px;
   margin: 0 25px;
 `;

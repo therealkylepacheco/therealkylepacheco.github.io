@@ -1,6 +1,6 @@
 import React from "react";
 import { Blurb, Image } from "./ThemedImage.styles";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 type Props = {
   src: string;
@@ -10,9 +10,15 @@ type Props = {
 
 export const ThemedImage = ({ src, caption, imgRounded }: Props) => {
   return (
-    <Grid container item justifyContent="center" alignItems="center">
+    <Grid
+      container
+      item
+      justifyContent="center"
+      alignItems="center"
+      style={{ paddingTop: "32px", paddingBottom: "32px" }}
+    >
       <Image imgRounded={imgRounded} src={src} />
-      {caption ? <Blurb variant="caption">{caption}</Blurb> : null}
+      {caption ? <Typography variant="h5">{caption}</Typography> : null}
     </Grid>
   );
 };

@@ -42,6 +42,7 @@ import { About } from "./pages/About";
 import { Navigation } from "./components/Navigation";
 import { Skills } from "./pages/Skills";
 import { Experience } from "./pages/Experience";
+import { Projects } from "./pages/Projects";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -99,10 +100,9 @@ function App() {
             <Intro />
             <Navigation />
             {/* <About /> */}
-            <Skills />
             <Experience />
-            <About /> <About /> <About /> <About /> <About /> <About />
-            <About /> <About /> <About /> <About />
+            <Skills />
+            <Projects />
           </Box>
         </Fade>
       </Box>
