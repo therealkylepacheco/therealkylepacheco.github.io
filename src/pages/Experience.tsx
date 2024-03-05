@@ -60,13 +60,28 @@ export const Experience = () => {
         link="https://www.plextrac.com"
         time="2022-Present"
       >
-        <Typography variant="h4">
-          Senior Software Engineer II (2024-Present),
+        <Box display="flex" flexDirection="column" alignItems="center">
+          <Typography variant="h3">
+            Senior Software Engineer II (2024-Present)
+          </Typography>
+          <Typography variant="h3">
+            Senior Software Engineer (2023-2024)
+          </Typography>
+          <Typography variant="h3">Software Engineer (2022-2023)</Typography>
+        </Box>
+        <Typography
+          variant="h4"
+          style={{
+            textIndent: "48px",
+            paddingTop: "32px",
+            transition: "all 0.5s ease-in-out",
+          }}
+        >
+          I currently work as a software engineer at PlexTrac. I am a member of
+          the rapid feature development team. I work as a fullstack developer,
+          focusing on the frontend UI, backend API, and how the two interact
+          with one another.
         </Typography>
-        <Typography variant="h4">
-          Senior Software Engineer (2023-2024),
-        </Typography>
-        <Typography variant="h4">Software Engineer (2022-2023)</Typography>
       </ExpandableCard>
 
       <Grid

@@ -12,6 +12,7 @@ export const Navigation = () => {
         backgroundColor: "#210002",
         position: "sticky",
         top: "0px",
+        zIndex: 99,
       }}
     >
       <Grid item sm={12} md={2}>

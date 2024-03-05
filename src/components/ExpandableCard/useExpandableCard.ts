@@ -13,7 +13,6 @@ export const useExpandableCard = (link: string) => {
   const handleExpand = useCallback(() => {
     if (!expanded) {
       // opening
-      setExpanded(true);
       setGridSize(12);
     } else {
       // closing
@@ -22,10 +21,18 @@ export const useExpandableCard = (link: string) => {
     }
   }, [expanded]);
 
+  const handleTransitionEnd = useCallback(() => {
+    if (gridSize === 12) {
+      setExpanded(true);
+    }
+    return;
+  }, [gridSize]);
+
   return {
     expanded,
     gridSize,
     handleClickImage,
     handleExpand,
+    handleTransitionEnd,
   };
 };

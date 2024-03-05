@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import ittLogo from "../images/inTimeTec.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
@@ -34,11 +34,22 @@ export const ExpandableCard = ({
   link,
   time,
 }: Props) => {
-  const { expanded, gridSize, handleClickImage, handleExpand } =
-    useExpandableCard(link);
+  const {
+    expanded,
+    gridSize,
+    handleClickImage,
+    handleExpand,
+    handleTransitionEnd,
+  } = useExpandableCard(link);
 
   return (
-    <GridWithTransition item xs={12} sm={gridSize}>
+    <GridWithTransition
+      onTransitionEnd={handleTransitionEnd}
+      item
+      xs={12}
+      sm={gridSize}
+      style={{ height: "100%" }}
+    >
       <Card>
         <CardContent>
           <Box
@@ -48,13 +59,19 @@ export const ExpandableCard = ({
             flexDirection="column"
           >
             <CardImage alt={imageAlt} onClick={handleClickImage} src={image} />
-            <Typography variant="h4">{time}</Typography>
+            <Typography variant="h3">{time}</Typography>
             <CardActions disableSpacing>
               <ExpandIconButton expanded={expanded} onClick={handleExpand}>
                 <ExpandMoreIcon />
               </ExpandIconButton>
             </CardActions>
-            <Collapse in={expanded} timeout={500} unmountOnExit>
+            {/* {expanded && (
+              <div onTransitionEnd={(e) => console.log("kdp END: ", e)}>
+                {" "}
+                {children}{" "}
+              </div>
+            )} */}
+            <Collapse in={expanded} unmountOnExit>
               {children}
             </Collapse>
           </Box>
