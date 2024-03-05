@@ -1,14 +1,9 @@
 import { GridSize } from "@material-ui/core";
 import { useCallback, useState } from "react";
 
-export const useExpandableCard = (link: string) => {
+export const useExpandableCard = () => {
   const [expanded, setExpanded] = useState(false);
   const [gridSize, setGridSize] = useState<GridSize>(6);
-
-  const handleClickImage = useCallback(
-    () => (link ? window.open(link, "_blank") : {}),
-    [link]
-  );
 
   const handleExpand = useCallback(() => {
     if (!expanded) {
@@ -31,7 +26,6 @@ export const useExpandableCard = (link: string) => {
   return {
     expanded,
     gridSize,
-    handleClickImage,
     handleExpand,
     handleTransitionEnd,
   };

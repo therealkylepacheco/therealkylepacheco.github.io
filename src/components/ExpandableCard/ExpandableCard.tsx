@@ -19,28 +19,19 @@ import {
   GridWithTransition,
 } from "./ExpandableCard.styles";
 
+/**
+ * KDP NOTE: WILL NEED TO BE MADE MOBILE FRIENDLY
+ */
+
 export type Props = {
   children: React.ReactNode;
-  image: string;
-  imageAlt: string;
-  link: string;
   time: string;
+  title: string;
 };
 
-export const ExpandableCard = ({
-  children,
-  image,
-  imageAlt,
-  link,
-  time,
-}: Props) => {
-  const {
-    expanded,
-    gridSize,
-    handleClickImage,
-    handleExpand,
-    handleTransitionEnd,
-  } = useExpandableCard(link);
+export const ExpandableCard = ({ children, time, title }: Props) => {
+  const { expanded, gridSize, handleExpand, handleTransitionEnd } =
+    useExpandableCard();
 
   return (
     <GridWithTransition
@@ -58,19 +49,13 @@ export const ExpandableCard = ({
             justifyContent="center"
             flexDirection="column"
           >
-            <CardImage alt={imageAlt} onClick={handleClickImage} src={image} />
+            <Typography variant="h2">{title}</Typography>
             <Typography variant="h3">{time}</Typography>
             <CardActions disableSpacing>
               <ExpandIconButton expanded={expanded} onClick={handleExpand}>
                 <ExpandMoreIcon />
               </ExpandIconButton>
             </CardActions>
-            {/* {expanded && (
-              <div onTransitionEnd={(e) => console.log("kdp END: ", e)}>
-                {" "}
-                {children}{" "}
-              </div>
-            )} */}
             <Collapse in={expanded} unmountOnExit>
               {children}
             </Collapse>
