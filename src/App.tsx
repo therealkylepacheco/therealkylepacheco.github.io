@@ -43,6 +43,7 @@ import { Navigation } from "./components/Navigation";
 import { Skills } from "./pages/Skills";
 import { Experience } from "./pages/Experience";
 import { Projects } from "./pages/Projects";
+import { Education } from "./pages/Education";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -103,6 +104,7 @@ function App() {
             <Experience />
             <Skills />
             <Projects />
+            <Education />
           </Box>
         </Fade>
       </Box>
