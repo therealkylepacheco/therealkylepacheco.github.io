@@ -59,7 +59,7 @@ export const ExperienceBar = ({ level, skill, value }: Props) => {
         style={{ paddingLeft: "16px" }}
       >
         <Fade in={showLevel}>
-          <Typography variant={isMobile ? "h4" : "h3"}>{level}</Typography>
+          <Typography variant={isMobile ? "h5" : "h3"}>{level}</Typography>
         </Fade>
       </Grid>
     </Grid>
