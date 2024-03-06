@@ -1,13 +1,15 @@
 import { Box, Fade, Grid } from "@material-ui/core";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { TypingTypography } from "../components/TypingTypography";
 import { IntroSubheading } from "../components/IntroSubheading";
+import { AppContext } from "../AppContext";
 
 type Props = {
   handleAnimationEnd: () => void;
 };
 
 export const IntroAnimation = ({ handleAnimationEnd }: Props) => {
+  const { isMobile } = useContext(AppContext);
   const [startAnimation, setStartAnimation] = useState(false);
   const [visible, setVisible] = useState(true);
   const handleDone = useCallback(() => setStartAnimation(true), []);
@@ -43,7 +45,7 @@ export const IntroAnimation = ({ handleAnimationEnd }: Props) => {
               initialDelay={3000}
               text="Kyle Pacheco"
               typeSpeed={125}
-              variant="h1"
+              variant={isMobile ? "h2" : "h1"}
             />
           </Grid>
           <IntroSubheading

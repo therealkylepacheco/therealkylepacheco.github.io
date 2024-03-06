@@ -1,6 +1,7 @@
 import { Fade, Grid, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { useIntroSubheading } from "./useIntroSubheading";
+import { AppContext } from "../../AppContext";
 
 type Props = {
   handleHide: () => void;
@@ -8,6 +9,8 @@ type Props = {
 };
 
 export const IntroSubheading = ({ handleHide, startAnimation }: Props) => {
+  const { isMobile } = useContext(AppContext);
+
   const { inCount, subs } = useIntroSubheading({ handleHide, startAnimation });
 
   return (
@@ -15,7 +18,10 @@ export const IntroSubheading = ({ handleHide, startAnimation }: Props) => {
       {subs.map((sub, index) => (
         <Grid key={sub} item xs={12} sm={4}>
           <Fade in={index < inCount}>
-            <Typography variant="h2" style={{ textAlign: "center" }}>
+            <Typography
+              variant={isMobile ? "h3" : "h2"}
+              style={{ textAlign: "center" }}
+            >
               {sub}
             </Typography>
           </Fade>
