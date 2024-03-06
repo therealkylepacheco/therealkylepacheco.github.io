@@ -67,14 +67,13 @@ const useStyles = makeStyles<Theme, { isMobile: boolean }>({
 
 function App() {
   const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
-  const classes = useStyles({ isMobile });
 
   const theme = createTheme(themeOptions);
 
-  // const [showContent, setShowContent] = useState(true);
-  // const [enableScroll, setEnableScroll] = useState(true);
-  const [showContent, setShowContent] = useState(false);
-  const [enableScroll, setEnableScroll] = useState(false);
+  const [showContent, setShowContent] = useState(true);
+  const [enableScroll, setEnableScroll] = useState(true);
+  // const [showContent, setShowContent] = useState(false);
+  // const [enableScroll, setEnableScroll] = useState(false);
   const handleAnimationEnd = useCallback(() => setShowContent(true), []);
 
   const endListener = useCallback(
@@ -100,7 +99,7 @@ function App() {
           scrollbarColor: "#973700 transparent",
         }}
       >
-        <IntroAnimation handleAnimationEnd={handleAnimationEnd} />
+        {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
         <Fade
           in={showContent}
           timeout={1000}
