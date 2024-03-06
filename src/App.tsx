@@ -1,85 +1,71 @@
-import { Theme, makeStyles } from "@material-ui/core";
-import React from "react";
-import { Route, Switch } from "react-router-dom";
-import Footer from "./components/Footer";
-import { Navbar } from "./components/Navbar/Navbar";
 import {
-  mobileNavbarHeight,
-  navbarHeight,
-  navbarRaw,
-} from "./components/Navbar/Navbar.styles";
-import pages from "./pages/index";
-import { MOBILE_NAV_BREAKPOINT, colors } from "./theme";
+  Box,
+  CssBaseline,
+  Fade,
+  ThemeProvider,
+  createTheme,
+} from "@material-ui/core";
+import React, { useCallback, useState } from "react";
+import { themeOptions } from "./theme";
 
-// transparenttextures.com
-import diamond from "./images/backgrounds/diamond-upholstery.png";
 import useMobilePage from "./pages/hooks/useMobilePage";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-
-const useStyles = makeStyles<Theme, { isMobile: boolean }>({
-  app: {
-    minHeight: "100vh",
-    backgroundColor: colors.background,
-    backgroundImage: `url(${diamond})`,
-  },
-  content: {
-    paddingTop: ({ isMobile }) =>
-      isMobile ? mobileNavbarHeight : navbarHeight,
-    paddingBottom: ({ isMobile }) =>
-      isMobile ? mobileNavbarHeight : navbarHeight,
-    paddingLeft: `${navbarRaw}vw`,
-    paddingRight: `${navbarRaw}vw`,
-    display: "flex",
-    flexDirection: "column",
-  },
-});
+import { IntroAnimation } from "./pages/IntroAnimation";
+import { Intro } from "./pages/Intro";
+import { Navigation } from "./components/Navigation";
+import { Skills } from "./pages/Skills";
+import { Experience } from "./pages/Experience";
+import { Projects } from "./pages/Projects";
+import { Education } from "./pages/Education";
+import { FooterUpdated } from "./components/FooterUpdated/FooterUpdated";
+import { AppContext } from "./AppContext";
 
 function App() {
-  const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
-  const classes = useStyles({ isMobile });
+  const isMobile = useMobilePage(700);
+
+  const theme = createTheme(themeOptions);
+
+  // const [showContent, setShowContent] = useState(true);
+  // const [enableScroll, setEnableScroll] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const [enableScroll, setEnableScroll] = useState(false);
+  const handleAnimationEnd = useCallback(() => setShowContent(true), []);
+
+  const endListener = useCallback((_el: HTMLElement) => {
+    setEnableScroll(true);
+  }, []);
 
   return (
-    <div className={classes.app}>
-      <Navbar options={pages} />
-      <div className={classes.content}>
-        <ScrollToTop />
-        <Switch>
-          {pages.map((page) => {
-            if (page.subRoutes) {
-              let baseRoute = (
-                <Route
-                  key={page.route}
-                  path={page.route}
-                  component={page.comp}
-                />
-              );
-              let subRoutes = page.subRoutes.map((sub) => {
-                let route = `${page.route}${sub.route}`;
-                return (
-                  <Route
-                    key={route}
-                    path={route}
-                    component={sub.comp}
-                    exact={true}
-                  />
-                );
-              });
-              return [...subRoutes, baseRoute];
-            } else {
-              return (
-                <Route
-                  key={page.route}
-                  exact={page.title === "Home"}
-                  path={page.route}
-                  component={page.comp}
-                />
-              );
-            }
-          })}
-        </Switch>
-      </div>
-      <Footer />
-    </div>
+    <AppContext.Provider value={{ isMobile }}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box
+          style={{
+            height: "100vh",
+            overflowY: enableScroll ? "auto" : "hidden",
+            overflowX: "hidden",
+            scrollbarColor: "#973700 transparent",
+          }}
+        >
+          <IntroAnimation handleAnimationEnd={handleAnimationEnd} />
+          <Fade
+            in={showContent}
+            timeout={1000}
+            addEndListener={endListener}
+            unmountOnExit
+          >
+            <Box display="flex" flexDirection="column" padding="32px">
+              <Intro />
+              <Navigation />
+              <Experience />
+              <Skills />
+              <Projects />
+              <Education />
+              <FooterUpdated />
+            </Box>
+          </Fade>
+        </Box>
+      </ThemeProvider>
+    </AppContext.Provider>
   );
 }
 

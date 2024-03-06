@@ -1,21 +1,16 @@
 import React from "react";
-import PageTitle from "../../components/PageTitle";
 import RepoMessage from "../../components/RepoMessage";
-import { ThemedGrid } from "../../components/ThemedGrid/ThemedGrid";
-import { ThemedText } from "../../components/ThemedText/ThemedText";
 import Grid from "@material-ui/core/Grid";
 import { ItchWidget } from "../../components/ItchWidget/ItchWidget";
+import { ProjectParagraphContainer } from "./components/ProjectParagraphContainer";
+import { ProjectParagraph } from "./components/ProjectParagraph";
 
 export const ProjectSpaceShooter = () => {
-  const title = "Project Space Shooter";
   const repoLink = "https://github.com/therealkylepacheco/space-shooter";
 
   return (
-    <ThemedGrid container spacing={5} direction="row">
+    <Grid container spacing={5} direction="row">
       <Grid item container xs={12}>
-        <Grid item xs={12}>
-          <PageTitle text={title} />
-        </Grid>
         <Grid item xs={12}>
           <RepoMessage link={repoLink} />
         </Grid>
@@ -26,14 +21,12 @@ export const ProjectSpaceShooter = () => {
           />
         </Grid>
       </Grid>
-      <Grid item xs={12}>
-        <ThemedText>
+      <ProjectParagraphContainer>
+        <ProjectParagraph>
           Project Space Shooter (PSS) is my second game. I made this game
           entirely in Unity and with object primitives.
-        </ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <ThemedText>
+        </ProjectParagraph>
+        <ProjectParagraph>
           PSS is an endless, arcade space shooter. Progressively harder waves of
           enemies spawn the longer the player survives. For the first four
           waves, new enemy types are introduced. These include a basic meteor
@@ -43,26 +36,19 @@ export const ProjectSpaceShooter = () => {
           introduced over the course of four waves. Once every enemy type has
           been introduced, they begin to spawn faster and faster with each
           subsequent wave.
-        </ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <ThemedText>
+        </ProjectParagraph>
+        <ProjectParagraph>
           Compared to my previous game Expander, PSS is much more complex. There
           is more assets, gameplay, and logic to take into account. Each enemy
           has its own behavior to take into account, there is a health system
           for the player, the game is pausable, and there is a scoring system in
           place.
-        </ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <ThemedText>
+        </ProjectParagraph>
+        <ProjectParagraph>
           I learned a lot while making PSS, and I am looking forward to applying
           this to a future project.
-        </ThemedText>
-      </Grid>
-      <Grid item xs={12}>
-        <ThemedText>Check out the game on itch.io!</ThemedText>
-      </Grid>
-    </ThemedGrid>
+        </ProjectParagraph>
+      </ProjectParagraphContainer>
+    </Grid>
   );
 };
