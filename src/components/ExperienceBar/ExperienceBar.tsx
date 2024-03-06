@@ -1,6 +1,7 @@
 import { Fade, Grid, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { useExperienceBar } from "./useExperienceBar";
+import { AppContext } from "../../AppContext";
 
 type Props = {
   value: number;
@@ -11,6 +12,8 @@ type Props = {
 export const ExperienceBar = ({ level, skill, value }: Props) => {
   const { handleMouseEnter, handleMouseLeave, showLevel, skillSize } =
     useExperienceBar(value);
+
+  const { isMobile } = useContext(AppContext);
 
   return (
     <Grid
@@ -29,9 +32,7 @@ export const ExperienceBar = ({ level, skill, value }: Props) => {
         xl={2}
         style={{ textAlign: "end", paddingRight: "16px" }}
       >
-        <Typography onClick={() => console.log("kdp test")} variant="h3">
-          {skill}
-        </Typography>
+        <Typography variant={isMobile ? "h5" : "h3"}>{skill}</Typography>
       </Grid>
       <Grid
         container
@@ -58,7 +59,7 @@ export const ExperienceBar = ({ level, skill, value }: Props) => {
         style={{ paddingLeft: "16px" }}
       >
         <Fade in={showLevel}>
-          <Typography variant="h3">{level}</Typography>
+          <Typography variant={isMobile ? "h4" : "h3"}>{level}</Typography>
         </Fade>
       </Grid>
     </Grid>

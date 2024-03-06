@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import isuLogo from "../images/isu.png";
 import nnuLogo from "../images/nnu.png";
 import Grid from "@material-ui/core/Grid";
@@ -6,12 +6,15 @@ import { Typography } from "@material-ui/core";
 import { PagePadding } from "../components/PagePadding/PagePadding";
 import { ExpandableCard } from "../components/ExpandableCard/ExpandableCard";
 import { ExperienceContent } from "../components/ExperienceContent/ExperienceContent";
+import { AppContext } from "../AppContext";
 
 export const Education = () => {
+  const { isMobile } = useContext(AppContext);
+
   return (
     <Grid style={PagePadding} container id="education" spacing={4}>
       <Grid item xs={12}>
-        <Typography variant="h1">Education</Typography>
+        <Typography variant={isMobile ? "h2" : "h1"}>Education</Typography>
       </Grid>
       <ExpandableCard title="Northwest Nazarene University">
         <ExperienceContent
