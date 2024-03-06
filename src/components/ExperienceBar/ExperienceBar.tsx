@@ -39,7 +39,6 @@ export const ExperienceBar = ({ level, skill, value }: Props) => {
         item
         xs={4}
         sm={4}
-        // lg={8}
         xl={8}
         style={{
           backgroundColor: "#973700",
@@ -50,14 +49,7 @@ export const ExperienceBar = ({ level, skill, value }: Props) => {
       >
         <Grid item xs={skillSize} style={{ backgroundColor: "#ffaf00" }} />
       </Grid>
-      <Grid
-        item
-        xs={4}
-        sm={4}
-        //   lg={2}
-        xl={2}
-        style={{ paddingLeft: "16px" }}
-      >
+      <Grid item xs={4} sm={4} xl={2} style={{ paddingLeft: "16px" }}>
         <Fade in={showLevel}>
           <Typography variant={isMobile ? "h5" : "h3"}>{level}</Typography>
         </Fade>

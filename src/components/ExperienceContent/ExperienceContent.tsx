@@ -1,8 +1,6 @@
 import { Box, Typography } from "@material-ui/core";
 import React, { useContext } from "react";
 import { Body } from "./ExperienceContent.styles";
-import { useExperienceContent } from "./useExperienceContent";
-import { CardImage } from "../ExpandableCard/ExpandableCard.styles";
 import { AppContext } from "../../AppContext";
 
 type Props = {
@@ -13,15 +11,7 @@ type Props = {
   titles?: string[];
 };
 
-export const ExperienceContent = ({
-  children,
-  image,
-  imageAlt,
-  link,
-  titles,
-}: Props) => {
-  const { handleClickImage } = useExperienceContent(link);
-
+export const ExperienceContent = ({ children, titles }: Props) => {
   const { isMobile } = useContext(AppContext);
 
   return (

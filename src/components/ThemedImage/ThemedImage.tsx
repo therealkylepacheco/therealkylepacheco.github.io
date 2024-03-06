@@ -1,5 +1,5 @@
 import React from "react";
-import { Blurb, Image } from "./ThemedImage.styles";
+import { Image } from "./ThemedImage.styles";
 import { Grid, Typography } from "@material-ui/core";
 
 type Props = {

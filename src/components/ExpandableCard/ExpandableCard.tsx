@@ -1,8 +1,4 @@
-import React, { useCallback, useContext } from "react";
-import ittLogo from "../images/inTimeTec.png";
-import kountLogo from "../images/kount.png";
-import liiingoLogo from "../images/liiingo.png";
-import plextracLogo from "../images/plextrac.png";
+import React, { useContext } from "react";
 import {
   Box,
   Card,
@@ -13,21 +9,14 @@ import {
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { useExpandableCard } from "./useExpandableCard";
-import {
-  CardImage,
-  ExpandIconButton,
-  GridWithTransition,
-} from "./ExpandableCard.styles";
+import { ExpandIconButton, GridWithTransition } from "./ExpandableCard.styles";
 import { AppContext } from "../../AppContext";
-
-/**
- * KDP NOTE: WILL NEED TO BE MADE MOBILE FRIENDLY
- */
 
 export type Props = {
   children: React.ReactNode;
   time?: string;
   title: string;
+  titleLink?: string;
 };
 
 export const ExpandableCard = ({ children, time, title }: Props) => {

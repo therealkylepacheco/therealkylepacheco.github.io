@@ -32,7 +32,7 @@ export const useTypeEffect = ({
     }
 
     handleDone();
-  }, [delay, handleDone, text, typeSpeed]);
+  }, [delay, handleDone, initialDelay, text, typeSpeed]);
 
   useEffect(() => {
     void handleTypeAnimation();

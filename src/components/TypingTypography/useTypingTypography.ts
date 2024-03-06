@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDelay, useTypeEffect } from "../../hooks";
 import { TypingConfig } from "./types";
 
@@ -26,7 +26,7 @@ export const useTypingTypography = ({
       setCursorVisible(tempVisible);
       await delay(500);
     }
-  }, []);
+  }, [delay]);
 
   useEffect(() => {
     void handleCursorBlink();

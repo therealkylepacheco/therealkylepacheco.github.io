@@ -1,5 +1,4 @@
 import React from "react";
-import PageTitle from "../../components/PageTitle";
 import RepoMessage from "../../components/RepoMessage";
 import Grid from "@material-ui/core/Grid";
 import { ThemedImage } from "../../components/ThemedImage/ThemedImage";
@@ -8,7 +7,6 @@ import { ProjectParagraphContainer } from "./components/ProjectParagraphContaine
 import { ProjectParagraph } from "./components/ProjectParagraph";
 
 export const ThisSite = () => {
-  const title = "This Site";
   const repoLink =
     "https://github.com/therealkylepacheco/therealkylepacheco.github.io";
 

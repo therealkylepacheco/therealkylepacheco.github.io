@@ -1,22 +1,10 @@
-import React, { useCallback, useContext, useState } from "react";
+import React, { useContext } from "react";
 import ittLogo from "../images/inTimeTec.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
 import plextracLogo from "../images/plextrac.png";
-import PageTitle from "../components/PageTitle";
-import { InfoCard } from "../components/InfoCard/InfoCard";
-import Grid, { GridSize } from "@material-ui/core/Grid";
-import { PagePadding } from "../components/PagePadding/PagePadding";
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  Collapse,
-  Typography,
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { ExpandIconButton } from "../components/InfoCard/InfoCard.styles";
+import Grid from "@material-ui/core/Grid";
+import { Typography } from "@material-ui/core";
 import { ExpandableCard } from "../components/ExpandableCard/ExpandableCard";
 import { ExperienceContent } from "../components/ExperienceContent/ExperienceContent";
 import { AppContext } from "../AppContext";
