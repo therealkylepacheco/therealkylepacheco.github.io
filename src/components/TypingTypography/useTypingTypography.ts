@@ -21,7 +21,7 @@ export const useTypingTypography = ({
 
   const handleCursorBlink = useCallback(async () => {
     let tempVisible = true;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 6; i++) {
       tempVisible = !tempVisible;
       setCursorVisible(tempVisible);
       await delay(500);

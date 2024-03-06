@@ -44,6 +44,7 @@ import { Skills } from "./pages/Skills";
 import { Experience } from "./pages/Experience";
 import { Projects } from "./pages/Projects";
 import { Education } from "./pages/Education";
+import { FooterUpdated } from "./components/FooterUpdated/FooterUpdated";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -70,20 +71,24 @@ function App() {
 
   const theme = createTheme(themeOptions);
 
-  const [showContent, setShowContent] = useState(true);
-  const [enableScroll, setEnableScroll] = useState(true);
-  // const [showContent, setShowContent] = useState(false);
-  // const [enableScroll, setEnableScroll] = useState(false);
+  // const [showContent, setShowContent] = useState(true);
+  // const [enableScroll, setEnableScroll] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+  const [enableScroll, setEnableScroll] = useState(false);
   const handleAnimationEnd = useCallback(() => setShowContent(true), []);
 
   const endListener = useCallback(
     ({ style: { opacity } }: HTMLElement) => {
-      if (opacity === "0") {
-        setEnableScroll(true);
-      }
+      // console.log("kdp HERE: ", opacity);
+      // if (opacity === "0") {
+      //   setEnableScroll(true);
+      // }
+      setEnableScroll(true);
     },
     [handleAnimationEnd]
   );
+
+  console.log("kdp isMobile: ", isMobile);
 
   return (
     <ThemeProvider theme={theme}>
@@ -95,64 +100,25 @@ function App() {
           scrollbarColor: "#973700 transparent",
         }}
       >
-        {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
-        <Fade in={showContent} timeout={1000} addEndListener={endListener}>
+        <IntroAnimation handleAnimationEnd={handleAnimationEnd} />
+        <Fade
+          in={showContent}
+          timeout={1000}
+          addEndListener={endListener}
+          unmountOnExit
+        >
           <Box display="flex" flexDirection="column" padding="32px">
             <Intro />
             <Navigation />
-            {/* <About /> */}
             <Experience />
             <Skills />
             <Projects />
             <Education />
+            <FooterUpdated />
           </Box>
         </Fade>
       </Box>
     </ThemeProvider>
-  );
-
-  return (
-    <div className={classes.app}>
-      {/* <Navbar options={pages} /> */}
-      <div className={classes.content}>
-        {/* <ScrollToTop />
-        <Switch>
-          {pages.map((page) => {
-            if (page.subRoutes) {
-              let baseRoute = (
-                <Route
-                  key={page.route}
-                  path={page.route}
-                  component={page.comp}
-                />
-              );
-              let subRoutes = page.subRoutes.map((sub) => {
-                let route = `${page.route}${sub.route}`;
-                return (
-                  <Route
-                    key={route}
-                    path={route}
-                    component={sub.comp}
-                    exact={true}
-                  />
-                );
-              });
-              return [...subRoutes, baseRoute];
-            } else {
-              return (
-                <Route
-                  key={page.route}
-                  exact={page.title === "Home"}
-                  path={page.route}
-                  component={page.comp}
-                />
-              );
-            }
-          })}
-        </Switch> */}
-      </div>
-      <Footer />
-    </div>
   );
 }
 

@@ -21,7 +21,7 @@ export const useIntroSubheading = ({ handleHide, startAnimation }: Args) => {
       setInCount(i);
       await delay(500);
     }
-    await delay(750);
+    await delay(500);
     handleHide();
   }, [delay, handleHide, subs]);
 

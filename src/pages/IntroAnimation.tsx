@@ -40,7 +40,7 @@ export const IntroAnimation = ({ handleAnimationEnd }: Props) => {
           <Grid item xs={12}>
             <TypingTypography
               handleDone={handleDone}
-              initialDelay={5000}
+              initialDelay={3000}
               text="Kyle Pacheco"
               typeSpeed={125}
               variant="h1"

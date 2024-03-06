@@ -50,7 +50,7 @@ export const Experience = () => {
    */
 
   return (
-    <Grid style={PagePadding} container id="experience" spacing={4}>
+    <Grid style={{ paddingTop: "24px" }} container id="experience" spacing={4}>
       <Grid item xs={12}>
         <Typography variant="h1">Experience</Typography>
       </Grid>
