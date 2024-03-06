@@ -95,7 +95,8 @@ function App() {
         <Box
           style={{
             height: "100vh",
-            overflow: enableScroll ? "auto" : "hidden",
+            overflowY: enableScroll ? "auto" : "hidden",
+            overflowX: "hidden",
             scrollbarColor: "#973700 transparent",
           }}
         >
