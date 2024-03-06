@@ -57,7 +57,7 @@ export const Navigation = () => {
     >
       {isMobile ? (
         <>
-          <IconButton onClick={handleOpenMenu}>
+          <IconButton style={{ width: "100%" }} onClick={handleOpenMenu}>
             <Menu color="primary" />
           </IconButton>
           <Drawer open={drawerIsOpen} anchor="top" onClose={handleCloseMenu}>

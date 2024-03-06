@@ -15,7 +15,7 @@ import {
   createTheme,
   makeStyles,
 } from "@material-ui/core";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { createContext, useCallback, useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar/Navbar";
@@ -45,6 +45,7 @@ import { Experience } from "./pages/Experience";
 import { Projects } from "./pages/Projects";
 import { Education } from "./pages/Education";
 import { FooterUpdated } from "./components/FooterUpdated/FooterUpdated";
+import { AppContext } from "./AppContext";
 
 const useStyles = makeStyles<Theme, { isMobile: boolean }>({
   app: {
@@ -66,7 +67,7 @@ const useStyles = makeStyles<Theme, { isMobile: boolean }>({
 });
 
 function App() {
-  const isMobile = useMobilePage(MOBILE_NAV_BREAKPOINT);
+  const isMobile = useMobilePage(700);
 
   const theme = createTheme(themeOptions);
 
@@ -87,37 +88,37 @@ function App() {
     [handleAnimationEnd]
   );
 
-  console.log("kdp isMobile: ", isMobile);
-
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box
-        style={{
-          height: "100vh",
-          overflow: enableScroll ? "auto" : "hidden",
-          scrollbarColor: "#973700 transparent",
-        }}
-      >
-        {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
-        <Fade
-          in={showContent}
-          timeout={1000}
-          addEndListener={endListener}
-          unmountOnExit
+    <AppContext.Provider value={{ isMobile }}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Box
+          style={{
+            height: "100vh",
+            overflow: enableScroll ? "auto" : "hidden",
+            scrollbarColor: "#973700 transparent",
+          }}
         >
-          <Box display="flex" flexDirection="column" padding="32px">
-            <Intro />
-            <Navigation />
-            <Experience />
-            <Skills />
-            <Projects />
-            <Education />
-            <FooterUpdated />
-          </Box>
-        </Fade>
-      </Box>
-    </ThemeProvider>
+          {/* <IntroAnimation handleAnimationEnd={handleAnimationEnd} /> */}
+          <Fade
+            in={showContent}
+            timeout={1000}
+            addEndListener={endListener}
+            unmountOnExit
+          >
+            <Box display="flex" flexDirection="column" padding="32px">
+              <Intro />
+              <Navigation />
+              <Experience />
+              <Skills />
+              <Projects />
+              <Education />
+              <FooterUpdated />
+            </Box>
+          </Fade>
+        </Box>
+      </ThemeProvider>
+    </AppContext.Provider>
   );
 }
 

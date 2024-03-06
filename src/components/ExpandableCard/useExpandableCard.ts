@@ -1,11 +1,19 @@
 import { GridSize } from "@material-ui/core";
 import { useCallback, useState } from "react";
+import useMobilePage from "../../pages/hooks/useMobilePage";
 
 export const useExpandableCard = () => {
   const [expanded, setExpanded] = useState(false);
   const [gridSize, setGridSize] = useState<GridSize>(6);
 
+  const isMobile = useMobilePage(1280);
+
   const handleExpand = useCallback(() => {
+    if (isMobile) {
+      setExpanded(!expanded);
+      return;
+    }
+
     if (!expanded) {
       // opening
       setGridSize(12);
@@ -14,14 +22,17 @@ export const useExpandableCard = () => {
       setExpanded(false);
       setGridSize(6);
     }
-  }, [expanded]);
+  }, [expanded, isMobile]);
 
   const handleTransitionEnd = useCallback(() => {
+    if (isMobile) {
+      return;
+    }
     if (gridSize === 12) {
       setExpanded(true);
     }
     return;
-  }, [gridSize]);
+  }, [gridSize, isMobile]);
 
   return {
     expanded,

@@ -1,8 +1,9 @@
 import { Box, Typography } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { Body } from "./ExperienceContent.styles";
 import { useExperienceContent } from "./useExperienceContent";
 import { CardImage } from "../ExpandableCard/ExpandableCard.styles";
+import { AppContext } from "../../AppContext";
 
 type Props = {
   children: React.ReactNode;
@@ -21,14 +22,18 @@ export const ExperienceContent = ({
 }: Props) => {
   const { handleClickImage } = useExperienceContent(link);
 
+  const { isMobile } = useContext(AppContext);
+
   return (
     <>
       <Box display="flex" flexDirection="column" alignItems="center">
         {/* <CardImage alt={imageAlt} onClick={handleClickImage} src={image} /> */}
         {titles &&
-          titles.map((title) => <Typography variant="h3">{title}</Typography>)}
+          titles.map((title) => (
+            <Typography variant={isMobile ? "h4" : "h3"}>{title}</Typography>
+          ))}
       </Box>
-      <Body variant="h4">{children}</Body>
+      <Body variant={isMobile ? "h5" : "h4"}>{children}</Body>
     </>
   );
 };

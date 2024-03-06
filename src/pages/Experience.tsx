@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import ittLogo from "../images/inTimeTec.png";
 import kountLogo from "../images/kount.png";
 import liiingoLogo from "../images/liiingo.png";
@@ -19,40 +19,15 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { ExpandIconButton } from "../components/InfoCard/InfoCard.styles";
 import { ExpandableCard } from "../components/ExpandableCard/ExpandableCard";
 import { ExperienceContent } from "../components/ExperienceContent/ExperienceContent";
+import { AppContext } from "../AppContext";
 
 export const Experience = () => {
-  const link = "https://www.plextrac.com";
-
-  const handleClickImage = useCallback(
-    () => (link ? window.open(link, "_blank") : {}),
-    [link]
-  );
-
-  const [expanded, setExpanded] = useState(false);
-  const [gridSize, setGridSize] = useState<GridSize>(6);
-  const handleExpand = useCallback(() => {
-    if (!expanded) {
-      // opening
-      setExpanded(true);
-      setGridSize(12);
-    } else {
-      // closing
-      setExpanded(false);
-      setGridSize(6);
-    }
-  }, [expanded]);
-
-  /**
-   *     style={{transition: theme.transitions.create("all", {
-          easing: theme.transitions.easing.sharp, 
-          duration: theme.transitions.duration.leavingScreen,
-  })}}
-   */
+  const { isMobile } = useContext(AppContext);
 
   return (
     <Grid style={{ paddingTop: "24px" }} container id="experience" spacing={4}>
       <Grid item xs={12}>
-        <Typography variant="h1">Experience</Typography>
+        <Typography variant={isMobile ? "h2" : "h1"}>Experience</Typography>
       </Grid>
       <ExpandableCard time="2022-Present" title="PlexTrac">
         <ExperienceContent

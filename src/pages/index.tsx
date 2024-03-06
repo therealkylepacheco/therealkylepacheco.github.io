@@ -10,43 +10,43 @@ import { Projects } from "./projects/constants";
 import { ProjectsPage } from "./projects/ProjectsPage";
 
 const Pages: PageType[] = [
-  {
-    comp: Home,
-    title: "Home",
-    route: "/",
-    img: logo,
-  },
-  {
-    comp: About,
-    title: "About",
-    route: "/about",
-  },
-  {
-    comp: Experience,
-    title: "Experience",
-    route: "/experience",
-  },
-  {
-    comp: Skills,
-    title: "Skills",
-    route: "/skills",
-  },
-  {
-    comp: Education,
-    title: "Education",
-    route: "/education",
-  },
-  {
-    title: "Projects",
-    route: "/projects",
-    comp: ProjectsPage,
-    subRoutes: Projects,
-  },
-  {
-    comp: Contact,
-    title: "Contact",
-    route: "/contact",
-  },
+  // {
+  //   comp: Home,
+  //   title: "Home",
+  //   route: "/",
+  //   img: logo,
+  // },
+  // {
+  //   comp: About,
+  //   title: "About",
+  //   route: "/about",
+  // },
+  // {
+  //   comp: Experience,
+  //   title: "Experience",
+  //   route: "/experience",
+  // },
+  // {
+  //   comp: Skills,
+  //   title: "Skills",
+  //   route: "/skills",
+  // },
+  // {
+  //   comp: Education,
+  //   title: "Education",
+  //   route: "/education",
+  // },
+  // {
+  //   title: "Projects",
+  //   route: "/projects",
+  //   comp: ProjectsPage,
+  //   subRoutes: Projects,
+  // },
+  // {
+  //   comp: Contact,
+  //   title: "Contact",
+  //   route: "/contact",
+  // },
 ];
 
 export default Pages;
