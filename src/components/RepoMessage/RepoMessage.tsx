@@ -18,3 +18,16 @@ export const RepoMessage = (props: RepoMessageProps) => {
     </Message>
   );
 };
+
+export const DeployedLink = (props: RepoMessageProps) => {
+  const { link } = { ...props };
+
+  return (
+    <Message variant="h4">
+      Check out the project{" "}
+      <Link rel="noreferrer" target="_blank" href={link}>
+        deployed here.
+      </Link>
+    </Message>
+  );
+};

@@ -8,6 +8,7 @@ import { Expander } from "./projects/Expander";
 import { ThisSite } from "./projects/ThisSite";
 import { Prime } from "./projects/Prime";
 import { AppContext } from "../AppContext";
+import { MortgageCalculator } from "./projects/MortgageCalculator";
 
 export const Projects = () => {
   const { isMobile } = useContext(AppContext);
@@ -16,6 +17,9 @@ export const Projects = () => {
       <Grid item xs={12}>
         <Typography variant={isMobile ? "h2" : "h1"}>Projects</Typography>
       </Grid>
+      <ExpandableCard title="Mortgage Calculator">
+        <MortgageCalculator />
+      </ExpandableCard>
       <ExpandableCard title="Project Space Shooter">
         <ProjectSpaceShooter />
       </ExpandableCard>

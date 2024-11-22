@@ -1,10 +1,16 @@
 import { PageType } from "../types";
 import { Expander } from "./Expander";
+import { MortgageCalculator } from "./MortgageCalculator";
 import { Prime } from "./Prime";
 import { ProjectSpaceShooter } from "./ProjectSpaceShooter";
 import { ThisSite } from "./ThisSite";
 
 export const Projects: PageType[] = [
+  {
+    comp: MortgageCalculator,
+    title: "Mortgage Calculator",
+    route: "/mortgage-calculator",
+  },
   {
     comp: ProjectSpaceShooter,
     title: "Space Shooter",
