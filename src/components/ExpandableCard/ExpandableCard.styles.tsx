@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const GridWithTransition = styled(Grid)`
   transition: all 0.25s ease-in-out;
-  max-height: 650px;
 `;
 
 export const CardImage = styled.img`

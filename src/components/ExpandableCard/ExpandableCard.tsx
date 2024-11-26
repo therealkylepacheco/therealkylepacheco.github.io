@@ -54,6 +54,18 @@ export const ExpandableCard = ({ children, time, title }: Props) => {
             </CardActions>
             <Collapse in={expanded} unmountOnExit>
               {children}
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <ExpandIconButton expanded={expanded} onClick={handleExpand}>
+                  <ExpandMoreIcon />
+                </ExpandIconButton>
+              </div>
             </Collapse>
           </Box>
         </CardContent>
